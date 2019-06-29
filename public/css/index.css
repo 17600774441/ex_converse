@@ -42,13 +42,13 @@ body{
 #login_ico{
   margin:0 40px 0 15px;
   width:30px;height:31px;
-  background:transparent url(./image/commons/sprites_header_footer.png) no-repeat -96px -85px;
+  background:transparent url(../image/commons/sprites_header_footer.png) no-repeat -96px -85px;
   vertical-align:middle;
 }
 #buycar_ico{
   margin:0 40px 0 15px;
   width:30px;height:31px;
-  background:url(./image/commons/sprites_header_footer.png) -168px -97px no-repeat transparent;
+  background:url(../image/commons/sprites_header_footer.png) -168px -97px no-repeat transparent;
   color:#fff;
   font-size:20px !important;
   text-align:center;
@@ -136,7 +136,7 @@ nav{
 }
 #get_chat{
   width:88px;height:88px;
-  background:transparent url(./image/commons/livechat.png) no-repeat;
+  background:transparent url(../image/commons/livechat.png) no-repeat;
   position:fixed;
   right:0px;
   top:60%;
@@ -326,7 +326,7 @@ section{
 .button:after{
   content:"";
   display:inline-block;
-  background:transparent url(./image/commons/sprites_header_footer.png) no-repeat -9px -163px;
+  background:transparent url(../image/commons/sprites_header_footer.png) no-repeat -9px -163px;
   width:20px;height:30px;
   margin-left:10px;
   margin-bottom:-10px;
@@ -399,7 +399,7 @@ a.bottom-button{
   display:block;
   float:left;
   margin:0 15px;
-  background:url(./image/home/share.png);
+  background:url(../image/home/share.png);
 }
 .share-link>a:first-child{
   background-position:75px 0;
