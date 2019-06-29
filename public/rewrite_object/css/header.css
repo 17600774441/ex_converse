@@ -1,0 +1,245 @@
+/* 顶部登录,菜单栏 */
+header{
+  width:100%;
+  position:fixed;
+  top:0;
+  z-index:999;
+}
+.top_func_bar{
+  height:80px;
+  max-width:100%;
+  line-height:80px;
+  background:#000;
+  display:flex;
+  justify-content: space-between;
+  padding:0 68px;
+}
+.top_func_bar>.top_func_bar_logo>img{
+  vertical-align: middle;
+}
+/* 登录,图标部分的ul */
+.top_func_bar_login{
+  list-style-type: none;
+  display:flex;
+  flex-wrap:nowrap;
+}
+/*登录部分按钮,链接*/
+.top_func_bar_login>li{
+  margin:0 25px;
+  padding: 0 27px 0 0;
+  white-space:nowrap;
+  color:#fff;
+  position:relative;
+}
+/* 登录部分的精灵图 */
+.top_func_bar_login>li:before{
+  content:"";
+  background-image:url(../image/commons/sprites_header_footer.png);
+  background-color:transparent;
+  background-repeat: no-repeat;
+  width: 30px;height: 31px;
+  display:block;
+  font-size:18px;
+  text-align:center;
+  color:#fff;
+  position:absolute;
+  right:0;top:50%;
+  margin-top:-15px;
+  margin-right:-15px;
+  cursor:pointer;
+}
+/* 登录/注册中的 / */
+.top_func_bar_login>li>span{
+  font-weight:bold;
+}
+/* 登录部分链接样式 */
+.top_func_bar_login>li>a{
+  text-decoration:none;
+  color:#fff;
+}
+.top_func_bar_login>li>a:hover{
+  text-decoration:underline;
+}
+/* 给li添加active类,则会出现下三角图形*/
+.top_func_bar .active:after {
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 15px solid black;
+  content: "";
+  display: block;
+  height: 0;
+  position: absolute;
+  top: 100%;
+  width: 0;
+  right:-15px;
+  z-index:5;
+}
+/*登录/注册按钮的精灵图*/
+.top_login:before{
+  background-position:-96px -85px;
+  position:absolute;
+  right:0;top:50%;
+  margin-top:-15px;
+  margin-right:-15px;
+}
+.top_login:hover:before{
+  background-position:-136px -65px;
+}
+/* 购物车按钮精灵图 */
+.top_shop_car:before{
+  background-position:-168px -97px;
+}
+/* 购物车部分精灵图上数字 */
+.top_shop_car_num{
+  position:absolute;
+  font-size:16px;
+  right:-4px;
+}
+/* 在线聊天按钮精灵图 */
+.top_get_chat:before{
+  background-position: -95px -54px;
+}
+.top_get_chat:hover:before{
+  background-position:-135px -33px;
+}
+/* 搜索按钮精灵图 */
+.top_search:before{
+  background-position: -137px -161px;
+}
+.top_search:hover:before{
+  background-position: -135px -1px;
+}
+/* 请求帮助部分精灵图 */
+.top_help:before{
+  background-position: -169px -161px;
+}
+.top_help:hover:before{
+  background-position: -167px -1px;
+}
+/* 顶部工具栏响应式布局 (媒体查询)*/
+@media (max-width:767px){
+  .top_func_bar_login>li{
+    margin:0 15px;
+  }
+  .top_func_bar_login>li>a{
+    display:none;
+  }
+  .top_func_bar_login>.top_login>span{
+    display:none;
+  }
+  .top_func_bar{
+    padding:0 5%;
+  }
+  .top_func_bar>.top_func_bar_logo>img{
+    height:15px;
+  }
+}
+@media (max-width:576px){
+  .top_get_chat{
+    display:none;
+  }
+}
+/* 顶部工具栏结束 */
+
+/* 登录 注册 搜索 的展开栏 */
+.header_expand{
+  width:100%;
+  height: auto;
+  background:#fff;
+}
+/* 展开栏基础类 */
+.expand_box{
+  width:100%;height:100%;
+  margin:0 auto;
+  position:relative;
+  background:#fff;
+  max-width:1000px;
+  overflow:hidden;
+  transition:1s;
+}
+/* 登录展开栏 */
+.sign_content{
+  height:0;
+  padding-top:0;
+  padding-bottom:0;
+  opacity:0;
+  box-sizing:border-box;
+}
+.sign_content.active{
+  height:397px;
+  padding-top:40px;
+  padding-bottom:40px;
+  opacity:1;
+}
+/*登录展开栏中的登录栏和注册栏*/
+.sign_content>div{
+  height:317px;
+  width:100%;
+  opacity:0;
+  position:absolute;
+  transition:1s;
+  z-index:1
+}
+.sign_content div.active{
+  opacity: 1;
+  z-index:5;
+}
+/*登录注册内容 基础类*/
+.sign_on_top,
+.sign_in_top{
+  display:flex;
+  justify-content:center;
+  width:100%;
+}
+/* 登录部分分栏 */
+.login_sign_on{
+  width:15%;
+}
+.login_with{
+  width:30%;
+  border-left:1px solid #999;
+  border-right:1px solid #999;
+  margin: 0 6%;
+  padding: 0 6%;
+}
+.login_form{
+  width:30%;
+}
+/*栏目标题基础类 title*/
+.title{
+  font-size:24px;
+  margin:0 0 20px;
+}
+/*按钮基础类  btn*/
+.btn{
+  background-color:#000;
+  color:#fff;
+  cursor:pointer;
+  font-size:18px;
+  height:40px;
+  line-height:38px;
+  text-align:center;
+  word-wrap:none;
+  width:100%;
+  box-sizing:border-box;
+  border:1px solid #000;
+  transition:500ms;
+}
+.btn:after{
+  background:url(../image/commons/sprites_header_footer.png) no-repeat scroll -10px -164px transparent;
+  width:15px;height:28px;
+  display:inline-block;
+  vertical-align: middle;
+  margin-left:12px;
+  content: "";
+  transition:500ms;
+}
+.btn:hover{
+  background-color:transparent;
+  color:#000;
+  border:1px solid #999;
+}
+.btn:hover:after{
+  background-position:-43px -164px;
+}
+

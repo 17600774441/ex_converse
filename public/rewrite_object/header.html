@@ -9,20 +9,93 @@
   <link rel="stylesheet" href="css/header.css">
 </head>
 <body>
+  <!-- 空div使主体内容不会被fixed遮挡 -->
+  <div class="stickspace" style="height:130px;"></div>
   <header>
     <div class="top_func_bar">
       <div class="top_func_bar_logo">
         <img src="image/converse_logo.png" alt="进入converse">
       </div>
       <ul class="top_func_bar_login">
-        <li class="top_login"><a href="javascript:void(0)">登录</a>/ <a href="javascript:void(0)">注册</a></li>
-        <li class="top_shop_car"><a href="javascript:void(0)"></a></li>
+        <li class="top_login"><a id="sign_in" href="javascript:void(0)">登录</a><span> / </span><a id="sign_on" href="javascript:void(0)">注册</a></li>
+        <li class="top_shop_car"><a href="javascript:void(0)">购物车</a>
+          <span class="top_shop_car_num">0</span>
+        </li>
         <li class="top_get_chat"><a href="javascript:void(0)"></a></li>
         <li class="top_search"><a href="javascript:void(0)"></a></li>
         <li class="top_help"><a href="javascript:void(0)"></a></li>
       </ul>
-      
     </div>
+    <div class="header_expand">
+      <div class="expand_box sign_content">
+        <div class="sign_in_top active" >
+          <dl class="login_sign_on">
+            <dt class="title">还未注册?</dt>
+            <dd class="btn">注册账户</dd>
+          </dl>
+          <dl class="login_with" style = "background:#ff0">
+              <dt class="title">您可以直接登录</dt>
+              <dd >
+                <a href="javascript:void(0);" id="login_to_ali"></a>
+                <a href="javascript:void(0);" id="login_to_sina"></a>
+              </dd>
+          </dl>
+          <dl class="login_form" style = "background:#f0f">
+
+          </dl>
+        </div>
+        <div class="sign_on_top" style = "background:#00f" >
+            <dl class="login_sign_on" style = "background:#0ff">
+
+            </dl>
+            <dl class="login_with" style = "background:#ff0"></dl>
+            <dl class="login_form" style = "background:#f0f"></dl>
+        </div>
+      </div>
+    </div>
+    <script>
+      //登录展开栏
+      (function(){
+        var t_li_login = document.getElementsByClassName("top_login");
+        var r_expand = document.getElementsByClassName("expand_box");
+        var $sign_in = document.getElementById("sign_in");
+        var $sign_on = document.getElementById("sign_on");
+        var $sign_in_top = document.getElementsByClassName("sign_in_top");
+        var $sign_on_top = document.getElementsByClassName("sign_on_top");
+        t_li_login[0].onclick = function(){
+          r_expand[0].classList.add("active");
+          t_li_login[0].classList.add("active");
+          $sign_in.onclick = function(){
+            $sign_in_top[0].classList.add("active");
+            $sign_on_top[0].classList.remove("active");
+          }
+          $sign_on.onclick = function(){
+            $sign_in_top[0].classList.remove("active");
+            $sign_on_top[0].classList.add("active");
+          }
+        }
+      })();
+      
+    </script>
+    <div style="width:100%;height:50px;background:#464646"></div>
   </header>
+  <script>
+    window.onscroll=(function(){
+      var scroll_t = document.getElementsByTagName("html")[0].scrollTop;
+      var $header = document.getElementsByTagName("header")[0];
+      var $top_func_bar = document.getElementsByClassName("top_func_bar")[0];
+      $top_func_bar.style.transition="500ms";
+      if(scroll_t>=130){
+        $top_func_bar.style.height="50px";
+        $top_func_bar.style.lineHeight="50px";
+      }else{
+        $top_func_bar.style.height="80px";
+        $top_func_bar.style.lineHeight="80px";
+      }
+    });
+  </script>
+  <div style="height:1000px;background:#0ff;">
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat nihil quod commodi? Minima modi incidunt eum nemo cum quam magnam quas et, animi illo velit dolore accusantium sunt blanditiis quae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora quasi doloremque dolorum. Quam expedita modi eveniet natus doloremque, aspernatur voluptatibus reiciendis quasi blanditiis, illo aperiam sed eum numquam quod non amet ipsum repudiandae maiores! Facere minima reprehenderit, numquam nostrum dolore aspernatur, facilis fugit quae, pariatur hic deserunt ad! Recusandae consequatur a est, quibusdam sint dolorem! Eos veniam suscipit, omnis alias laborum aliquid, obcaecati harum eveniet explicabo totam enim molestias sit voluptates quis ex, hic dignissimos est! Recusandae laudantium dolor accusamus inventore, rem illo ratione pariatur. Tenetur iusto excepturi cumque ea! Quia, ea. Reprehenderit commodi officiis similique nisi quisquam. Eaque magnam itaque sit ab temporibus quam qui. Illo voluptate qui, culpa, deserunt nisi corporis rerum dicta neque animi minima sint maxime in atque harum consequatur id impedit iure omnis assumenda iusto libero ullam eos hic ipsam. Dicta ipsam magnam tempore nisi sunt tempora blanditiis cumque? Nostrum consequuntur laudantium pariatur facilis? Quam provident, deleniti eos modi mollitia sequi, numquam eveniet, a autem doloribus vitae? Enim nam sed maiores, odit doloribus porro! Sint ipsum fugit cupiditate nisi nulla inventore facere, perspiciatis, amet quibusdam non aliquid consequatur cum! Voluptatem doloremque voluptatum veniam rerum sunt odit nemo enim nisi pariatur dolorum, esse dolores cum unde!
+  </div>
 </body>
 </html>
