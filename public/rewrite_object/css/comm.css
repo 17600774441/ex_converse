@@ -1,0 +1,10 @@
+*{
+  margin:0;padding:0;
+  user-select: none;  
+}
+body{
+  color:#333;
+  background:#fff;
+  font-family: tradegothic, fzlthjw, 微软雅黑, "Microsoft YaHei", 黑体, SimHei;
+  font-size: 12px;
+}
