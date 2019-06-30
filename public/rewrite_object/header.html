@@ -53,7 +53,7 @@
                 <input class="form_input" type="text" placeholder="邮箱/手机">
               </dd>
               <dd>
-                <input class="form_input" type="text" placeholder="账户密码">
+                <input class="form_input" type="password" placeholder="账户密码">
               </dd>
               <dd>
                 <button class="form_input form_auth">点击按钮进行验证</button>
@@ -81,12 +81,45 @@
               </dd> 
           </dl>
         </div>
-        <div class="sign_on_top" style = "background:#00f" >
-            <dl class="sign_on_left" style = "background:#0ff">
-              <dd><input type="text" class="form_input" placeholder="176xxx4441"></dd>
+        <div class="sign_on_top">
+            <dl class="sign_on_left">
+              <dd><p class="font-sm">手机号码 <span style="color:#f00;">*</span></p>
+                <input type="text" class="form_input" placeholder="176xxx4441">
+                <p class="msg">请输入手机号码!</p>
+              </dd>
+              <dd><p class="font-sm">输入密码 <span style="color:#f00;">*</span></p>
+                <input type="text" class="form_input" placeholder="密码至少为6位字符">
+                <p class="msg">请输入密码</p>
+              </dd>
+              <dd><button class="form_input form_auth">点击按钮进行验证</button></dd>
             </dl>
-            <dl class="sign_on_center" style = "background:#ff0"></dl>
-            <dl class="sign_on_right" style = "background:#f0f"></dl>
+            <dl class="sign_on_center">
+                <dd><p class="font-sm">邮箱 <span style="color:#f00;">*</span></p>
+                  <input type="text" class="form_input" placeholder="example@converse.com">
+                  <p class="msg">请输入电子邮箱地址!</p>
+                </dd>
+                <dd><p class="font-sm">确认密码 <span style="color:#f00;">*</span></p>
+                  <input type="text" class="form_input" placeholder="密码至少为6位字符">
+                  <p class="msg">请再次输入密码</p>
+                </dd>
+                <dd><p class="font-sm">短信验证码 <span style="color:#f00;">*</span></p>
+                  <input type="text" class="form_input">
+                  <p class="msg">您填写的短信验证码有误,请重新输入</p>
+                </dd>
+            </dl>
+            <dl class="sign_on_right">
+                <dd><p class="font-sm">性别 <span style="color:#f00;">*</span></p>
+                  <span class="checkbox checked font-sm">男的</span><span class="checkbox">女的</span>
+                </dd>
+                <dd><p class="font-sm" style="margin-top:25px;">生日（年-月-日）<span style="color:#f00;">*</></p>
+                  <input type="text" class="form_input" placeholder="您的生日:yyyy-mm-dd">
+                  <p class="msg">输入您的生日</p>
+                </dd>
+                <dd>
+                  <p class="font-sm">一旦创建账户，即表明你同意匡威的法律声明和使用规则</p>
+                </dd>
+                <dd class="btn">注册账户</dd>
+            </dl>
         </div>
       </div>
     </div>
@@ -131,7 +164,6 @@
               r_expand[0].classList.add("active");
               $sign_in_top[0].classList.add("active");
               $sign_on_top[0].classList.remove("active");
-
           }
           $sign_on.onclick = function(){
             r_expand[0].classList.add("active");
@@ -175,8 +207,5 @@
       }
     });
   </script>
-  <div style="height:1000px;background:#0ff;font-size:20px;">
-    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat nihil quod commodi? Minima modi incidunt eum nemo cum quam magnam quas et, animi illo velit dolore accusantium sunt blanditiis quae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora quasi doloremque dolorum. Quam expedita modi eveniet natus doloremque, aspernatur voluptatibus reiciendis quasi blanditiis, illo aperiam sed eum numquam quod non amet ipsum repudiandae maiores! Facere minima reprehenderit, numquam nostrum dolore aspernatur, facilis fugit quae, pariatur hic deserunt ad! Recusandae consequatur a est, quibusdam sint dolorem! Eos veniam suscipit, omnis alias laborum aliquid, obcaecati harum eveniet explicabo totam enim molestias sit voluptates quis ex, hic dignissimos est! Recusandae laudantium dolor accusamus inventore, rem illo ratione pariatur. Tenetur iusto excepturi cumque ea! Quia, ea. Reprehenderit commodi officiis similique nisi quisquam. Eaque magnam itaque sit ab temporibus quam qui. Illo voluptate qui, culpa, deserunt nisi corporis rerum dicta neque animi minima sint maxime in atque harum consequatur id impedit iure omnis assumenda iusto libero ullam eos hic ipsam. Dicta ipsam magnam tempore nisi sunt tempora blanditiis cumque? Nostrum consequuntur laudantium pariatur facilis? Quam provident, deleniti eos modi mollitia sequi, numquam eveniet, a autem doloribus vitae? Enim nam sed maiores, odit doloribus porro! Sint ipsum fugit cupiditate nisi nulla inventore facere, perspiciatis, amet quibusdam non aliquid consequatur cum! Voluptatem doloremque voluptatum veniam rerum sunt odit nemo enim nisi pariatur dolorum, esse dolores cum unde!
-  </div>
 </body>
 </html>

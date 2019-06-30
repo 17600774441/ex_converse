@@ -362,10 +362,30 @@ header{
     display:none !important;
   }
 }
+
+
+
+
 /*注册展开栏*/
 .sign_on_left,.sign_on_center,.sign_on_right{
   width:33.333%;
 }
+/*提示信息*/
+.sign_on_top .msg{
+  margin-top:-20px;
+  margin-bottom:10px;
+  color:#f00;
+}
+/* 注册栏中间部分样式 */
+.sign_on_center{
+  margin-left:20px;
+  margin-right:20px;
+  padding-left:20px;
+  padding-right:20px;
+}
+
+
+
 
 
 
