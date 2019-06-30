@@ -1,0 +1,4 @@
+{
+  "python.autoComplete.showAdvancedMembers": false,
+  "emmet.triggerExpansionOnTab": true
+}

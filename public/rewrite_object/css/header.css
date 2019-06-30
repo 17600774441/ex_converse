@@ -32,7 +32,7 @@ header{
   position:relative;
 }
 /* 登录部分的精灵图 */
-.top_func_bar_login>li:before{
+.top_func_bar_login>li:not([id="top_login"]):before{
   content:"";
   background-image:url(../image/commons/sprites_header_footer.png);
   background-color:transparent;
@@ -75,14 +75,16 @@ header{
   z-index:5;
 }
 /*登录/注册按钮的精灵图*/
-.top_login:before{
+.top_login>.before{
+  width: 30px;height: 31px;
+  background-image:url(../image/commons/sprites_header_footer.png);
   background-position:-96px -85px;
   position:absolute;
   right:0;top:50%;
   margin-top:-15px;
   margin-right:-15px;
 }
-.top_login:hover:before{
+.top_login:hover>.before{
   background-position:-136px -65px;
 }
 /* 购物车按钮精灵图 */
@@ -155,7 +157,7 @@ header{
   background:#fff;
   max-width:1000px;
   overflow:hidden;
-  transition:1s;
+  transition:800ms;
 }
 /* 登录展开栏 */
 .sign_content{
@@ -341,9 +343,6 @@ header{
   visibility: hidden;
 }
 /*登陆部分响应式(媒体查询)*/
-@media (max-width:767px){
-  
-}
 @media (max-width:576px){
   .sign_content{
     min-height:80px !important;
@@ -363,6 +362,10 @@ header{
     display:none !important;
   }
 }
+/*注册展开栏*/
+.sign_on_left,.sign_on_center,.sign_on_right{
+  width:33.333%;
+}
 
 
 
@@ -372,7 +375,7 @@ header{
   background:#fff;
   height:0;
   overflow:hidden;
-  transition:height 1s;
+  transition:height 500ms;
 }
 .search_bar.active{
   height:80px;

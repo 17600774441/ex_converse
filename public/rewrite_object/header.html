@@ -17,7 +17,9 @@
         <img src="image/converse_logo.png" alt="进入converse">
       </div>
       <ul class="top_func_bar_login">
-        <li class="top_login"><a id="sign_in" href="javascript:void(0)">登录</a><span> / </span><a id="sign_on" href="javascript:void(0)">注册</a></li>
+        <li class="top_login" id="top_login"><a id="sign_in" href="javascript:void(0)">登录</a><span> / </span><a id="sign_on" href="javascript:void(0)">注册</a>
+          <div class="before"></div>
+        </li>
         <li class="top_shop_car"><a href="javascript:void(0)">购物车</a>
           <span class="top_shop_car_num">0</span>
         </li>
@@ -67,6 +69,7 @@
                 </div>
                 <script>
                   (function(){
+                    // 记住用户名选中
                     var $checkbox = document.getElementsByClassName("checkbox")[0];
                     console.log($checkbox);
                     $checkbox.onclick = function(){
@@ -79,11 +82,11 @@
           </dl>
         </div>
         <div class="sign_on_top" style = "background:#00f" >
-            <dl class="login_sign_on" style = "background:#0ff">
-
+            <dl class="sign_on_left" style = "background:#0ff">
+              <dd><input type="text" class="form_input" placeholder="176xxx4441"></dd>
             </dl>
-            <dl class="login_with" style = "background:#ff0"></dl>
-            <dl class="login_form" style = "background:#f0f"></dl>
+            <dl class="sign_on_center" style = "background:#ff0"></dl>
+            <dl class="sign_on_right" style = "background:#f0f"></dl>
         </div>
       </div>
     </div>
@@ -97,29 +100,44 @@
     <script>
       //登录展开栏
       (function(){
+        //登陆注册的按钮(有active时出现下三角箭头)
         var t_li_login = document.getElementsByClassName("top_login");
+        //展开栏(有active时展开)
         var r_expand = document.getElementsByClassName("expand_box");
-        var $top_search = document.getElementsByClassName("top_search")[0];
+        //登陆的a标签
         var $sign_in = document.getElementById("sign_in");
+        //注册的a标签
         var $sign_on = document.getElementById("sign_on");
+        //登录表单栏(active时显示)
         var $sign_in_top = document.getElementsByClassName("sign_in_top");
+        //注册表单栏(active时显示)
         var $sign_on_top = document.getElementsByClassName("sign_on_top");
+        //搜索的按钮(有active时出现下三角箭头)
+        var $top_search = document.getElementsByClassName("top_search")[0];
+        //搜索的表单栏(active时显示)
         var $search_bar = document.getElementsByClassName("search_bar")[0];
-        t_li_login[0].onclick = function(){
-          r_expand[0].classList.add("active");
-          t_li_login[0].classList.add("active");
-          $top_search.classList.remove("active");
-          $search_bar.classList.remove("active");
-          $sign_in.onclick = function(){
+        //登录注册按钮后的精灵图(点击时toggle r_expand 的 active)
+        var $logo_before = document.getElementsByClassName("before")[0];
+        // t_li_login[0].onclick = function(){
+          $logo_before.onclick = function(){
+            t_li_login[0].classList.toggle("active");
+            r_expand[0].classList.toggle("active");
             $sign_in_top[0].classList.add("active");
             $sign_on_top[0].classList.remove("active");
+            $top_search.classList.remove("active");
+            $search_bar.classList.remove("active");
+          }
+          $sign_in.onclick = function(){
+              r_expand[0].classList.add("active");
+              $sign_in_top[0].classList.add("active");
+              $sign_on_top[0].classList.remove("active");
+
           }
           $sign_on.onclick = function(){
+            r_expand[0].classList.add("active");
             $sign_in_top[0].classList.remove("active");
             $sign_on_top[0].classList.add("active");
           }
-
-        }
       })();
       //搜索栏展开
       (function(){
