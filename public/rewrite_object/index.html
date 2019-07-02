@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/comm.css">
+  <link rel="stylesheet" href="css/carousel.css">
+</head>
+<body>
+  <div class="carousel-bar">
+    <ul class="carousel">
+      <li class="carousel-item active"><img src="image/pc/aspbb_kv_pc_pre_20190530.jpg" alt=""></li>
+      <li class="carousel-item"><img src="image/pc/erx_su19_kv_pc_190606.jpg" alt=""></li>
+      <li class="carousel-item"><img src="image/pc/jp_gold_kv_pc_190426.jpg" alt=""></li>
+      <li class="carousel-item"><img src="image/pc/pride_kv_pc_20190605.jpg" alt=""></li>
+    </ul>
+    <ul class="carousel-pointer">
+      <li class="carousel-link active">All Star</li>
+      <li class="carousel-link">PRIDE</li>
+      <li class="carousel-link">ERX</li>
+      <li class="carousel-link">JP GOLD</li>
+    </ul>  
+  </div>
+  
+  <script>
+    (function(){
+      var arr_pic = document.getElementsByClassName("carousel-item"),i=0;
+      arr_pic[0].parentNode.style.height = arr_pic[0].offsetHeight+"px";
+      var arr_pointer = document.getElementsByClassName("carousel-link");
+      var nextPic = setInterval(function(){
+        arr_pic[i].classList.remove("active");
+        arr_pointer[i].classList.remove("active");
+        if(i==arr_pic.length-1){
+          i=0;
+          arr_pic[i].classList.add("active");
+          arr_pointer[i].classList.add("active");
+        }else{
+          arr_pic[i+1].classList.add("active");
+          arr_pointer[i+1].classList.add("active");
+        }
+        i++;
+      },2000);
+      
+    })()
+    window.addEventListener("resize",function(){
+      var arr_pic = document.getElementsByClassName("carousel-item");
+      arr_pic[0].parentNode.style.height = arr_pic[0].offsetHeight+"px";
+    });
+    
+  </script>
+</body>
+</html>

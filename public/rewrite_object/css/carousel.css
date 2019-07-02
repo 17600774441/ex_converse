@@ -1,0 +1,47 @@
+.carousel-bar{
+  position:relative;
+  text-align:center;
+}
+/*轮播图列表*/
+.carousel{
+  margin:0;padding:0;
+  list-style-type:none;
+  position:relative;
+  height:auto;
+}
+/*轮播图项*/
+li.carousel-item{
+  margin:0;padding:0;
+  position:absolute;
+  opacity:0;
+  transition:opacity 800ms;
+}
+/*当前展示图片*/
+.carousel-item.active{
+  opacity:1;
+}
+/*图片样式*/
+.carousel-item img{
+  width:100%;
+}
+/*轮播图指示器*/
+.carousel-pointer{
+  margin:0 auto;
+  display:inline-block;
+  white-space:nowrap;
+  text-align:center;
+  list-style: none;
+}
+.carousel-link{
+  display:inline-block;
+  padding:0 1%;
+  margin-top:1%;
+  font-weight:bold;
+  color:#ccc;
+  
+}
+.carousel-link:hover,.carousel-link.active{
+  margin-top:-1px;
+  border-top:1px solid #000;
+  color: #000000;
+}
