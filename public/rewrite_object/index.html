@@ -25,22 +25,25 @@
   </div>
   
   <script>
+    //轮播图手写尝试
     (function(){
-      var arr_pic = document.getElementsByClassName("carousel-item"),i=0;
+      var arr_pic = document.getElementsByClassName("carousel-item"),i=1;
       arr_pic[0].parentNode.style.height = arr_pic[0].offsetHeight+"px";
       var arr_pointer = document.getElementsByClassName("carousel-link");
       var nextPic = setInterval(function(){
-        arr_pic[i].classList.remove("active");
-        arr_pointer[i].classList.remove("active");
-        if(i==arr_pic.length-1){
-          i=0;
+        arr_pic[i-1].classList.remove("active");
+        arr_pointer[i-1].classList.remove("active");
+        if(i<arr_pic.length){
           arr_pic[i].classList.add("active");
           arr_pointer[i].classList.add("active");
+          i++;
         }else{
-          arr_pic[i+1].classList.add("active");
-          arr_pointer[i+1].classList.add("active");
+          i = 1;
+          arr_pic[i-1].classList.add("active");
+          arr_pointer[i-1].classList.add("active");
         }
-        i++;
+        
+        
       },2000);
       
     })()
