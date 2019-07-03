@@ -33,7 +33,7 @@
         <div class="sign_in_top active" >
           <dl class="login_sign_on">
             <dt class="title">还未注册?</dt>
-            <dd class="btn">注册账户</dd>
+            <dd class="btn sign_on_btn">注册账户</dd>
             <dd class="title vis-hi">您可以直接登录</dd>
             <dd class="vis-hi">
               <a href="javascript:void(0);" id="login_to_alipay"></a>
@@ -71,7 +71,6 @@
                   (function(){
                     // 记住用户名选中
                     var $checkbox = document.getElementsByClassName("checkbox")[0];
-                    console.log($checkbox);
                     $checkbox.onclick = function(){
                       $checkbox.classList.toggle("checked");
                     }
@@ -149,16 +148,21 @@
         var $top_search = document.getElementsByClassName("top_search")[0];
         //搜索的表单栏(active时显示)
         var $search_bar = document.getElementsByClassName("search_bar")[0];
+        //进入注册展开栏的按钮 sign_on_btn
+        var $sign_on_btn = document.getElementsByClassName("sign_on_btn")[0];
         //登录注册按钮后的精灵图(点击时toggle r_expand 的 active)
+        
         var $logo_before = document.getElementsByClassName("before")[0];
-        // t_li_login[0].onclick = function(){
+          t_li_login[0].onclick = function(){
+            $search_bar.classList.remove("active");
+            $top_search.classList.remove("active");
+          }
           $logo_before.onclick = function(){
             t_li_login[0].classList.toggle("active");
             r_expand[0].classList.toggle("active");
             $sign_in_top[0].classList.add("active");
             $sign_on_top[0].classList.remove("active");
-            $top_search.classList.remove("active");
-            $search_bar.classList.remove("active");
+            
           }
           $sign_in.onclick = function(){
               r_expand[0].classList.add("active");
@@ -166,12 +170,14 @@
               $sign_in_top[0].classList.add("active");
               $sign_on_top[0].classList.remove("active");
           }
-          $sign_on.onclick = function(){
+          var signOnDrop = function (){
             r_expand[0].classList.add("active");
             t_li_login[0].classList.add("active");
             $sign_in_top[0].classList.remove("active");
             $sign_on_top[0].classList.add("active");
           }
+          $sign_on.onclick = signOnDrop;
+          $sign_on_btn.onclick = signOnDrop;
       })();
       //搜索栏展开
       (function(){
@@ -192,23 +198,106 @@
         }
       })()
     </script>
+    <nav class = "top_nav_bar">
+      <ul class="top_nav">
+        <li class="top_nav_link link_drop">男的</li>
+        <li class="top_nav_link link_drop">女的</li>
+        <li class="top_nav_link link_drop">儿童</li>
+        <li class="top_nav_link">联名合作款</li>
+        <li class="top_nav_link">店铺分部</li>
+      </ul>
+      <ul class="nav_dropdown"">
+        <li class="dropdown-item">
+          <ul class="drop_table">
+            <li class="drop_row">
+              <a href=""><img src="image/home/nav/M_B_FTW_190416.jpg" alt=""><span>踩的</span></a>
+              <a href=""><img src="image/home/nav/M_B_APP_190416.jpg" alt=""><span>穿的</span></a>
+              <a href=""><img src="image/home/nav/M_B_TEE_190416.jpg" alt=""><span>T恤</span></a>
+              <a href=""><img src="image/home/nav/M_B_ACC_190416.jpg" alt=""><span>戴的</span></a>
+              <a href=""><img src="image/home/nav/new_icon.jpg" alt=""><span>新产品</span></a>
+              <a href=""><img src="image/home/nav/discount_icon.jpg" alt=""><span>优惠</span></a>
+            </li>
+            <li class="drop_row">
+              <a href=""><img src="image/home/nav/_drop_down_men_06_30.jpg" alt=""><span>经典款</span></a>
+              <a href=""><img src="image/home/nav/chuck_70_190416.jpg" alt=""><span>CHUCK 70</span></a>
+              <a href=""><img src="image/home/nav/onestar_190416.jpg" alt=""><span>ONE STAR</span></a>
+              <a href=""><img src="image/home/nav/allstar_190416.jpg" alt=""><span>ALL STAR</span></a>
+              <a href=""><img src="image/home/nav/cons_190530.jpg" alt=""><span>CONS</span></a>
+              <a href=""><img src="image/home/nav/jp_190416.jpg" alt=""><span>JACK PURCELL</span></a>
+            </li>
+          </ul>
+        </li>
+        <li class="dropdown-item">
+          <ul class="drop_table">
+            <li class="drop_row">
+              <a href=""><img src="image/home/nav/W_B_FTW_190416.jpg" alt=""><span>踩的</span></a>
+              <a href=""><img src="image/home/nav/W_B_APP_190416.jpg" alt=""><span>穿的</span></a>
+              <a href=""><img src="image/home/nav/W_B_TEE_190416.jpg" alt=""><span>T恤</span></a>
+              <a href=""><img src="image/home/nav/W_B_ACC_190416.jpg" alt=""><span>戴的</span></a>
+              <a href=""><img src="image/home/nav/new_icon.jpg" alt=""><span>新产品</span></a>
+              <a href=""><img src="image/home/nav/discount_icon.jpg" alt=""><span>优惠</span></a>
+            </li>
+            <li class="drop_row">
+              <a href=""><img src="image/home/nav/_drop_down_men_06_30.jpg" alt=""><span>经典款</span></a>
+              <a href=""><img src="image/home/nav/chuck_70_190416.jpg" alt=""><span>CHUCK 70</span></a>
+              <a href=""><img src="image/home/nav/onestar_190416.jpg" alt=""><span>ONE STAR</span></a>
+              <a href=""><img src="image/home/nav/allstar_190416.jpg" alt=""><span>ALL STAR</span></a>
+              <a href=""><img src="image/home/nav/f_cons_190416.jpg" alt=""><span>CONS</span></a>
+              <a href=""><img src="image/home/nav/jp_190416.jpg" alt=""><span>JACK PURCELL</span></a>
+            </li>
+          </ul>
+        </li>
+        <li class="dropdown-item">
+          <ul class="drop_table">
+            <li class="drop_row">
+              <a href=""><img src="image/home/nav/1-4-v1.jpg" alt=""><span>(1-4岁)</span></a>
+              <a href=""><img src="image/home/nav/4-8-v1.jpg" alt=""><span>(4-8岁)</span></a>
+              <a href=""><img src="image/home/nav/4-12-v1.jpg" alt=""><span>(4-12岁)</span></a>
+              <a href=""><img src="image/home/nav/8-12.jpg" alt=""><span>(8-12岁)</span></a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
   </header>
-  <div style="width:100%;height:50px;background:#464646">
-  </div>
   <script>
     window.onscroll=function(){
       var scroll_t = document.getElementsByTagName("html")[0].scrollTop;
       var $header = document.getElementsByTagName("header")[0];
       var $top_func_bar = document.getElementsByClassName("top_func_bar")[0];
-      $top_func_bar.style.transition="500ms";
+      var $top_nav_bar = document.getElementsByClassName("top_nav_bar")[0];
       if(scroll_t>=130){
         $top_func_bar.style.height="50px";
-        $top_func_bar.style.lineHeight="50px";
+        $top_func_bar.style.lineHeight = "50px";
+        // $top_nav_bar.style.height="30px";
+        // $top_nav_bar.style.lineHeight="30px";
       }else{
         $top_func_bar.style.height="80px";
-        $top_func_bar.style.lineHeight="80px";
+        $top_func_bar.style.lineHeight = "80px";
+        // $top_nav_bar.style.height="50px";
+        // $top_nav_bar.style.lineHeight="50px";
       }
     };
+    //导航栏下展开控制器
+    var $link_drop = document.getElementsByClassName("link_drop");
+    var $dropdown_item = document.getElementsByClassName("dropdown-item");
+    var drop= function (x) {
+      var arr = [0,1,2];
+      arr.splice(x,1);
+      return function(){
+        $dropdown_item[x].classList.toggle("active");
+        $dropdown_item[arr[0]].classList.remove("active");
+        $dropdown_item[arr[1]].classList.remove("active");
+        
+      }
+      
+    };
+    for(var i=0;i<3;i++ ){
+      $link_drop[i].onclick = drop(i);
+    }
+    
+    
   </script>
+  <div style = "font-size:30px;height:999px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor iure magni, ducimus deserunt suscipit sequi odit quam maxime necessitatibus, quibusdam, omnis ut culpa atque velit earum architecto delectus doloremque nulla.</div>
 </body>
 </html>
