@@ -518,6 +518,7 @@ header{
   display:inline-flex;
   opacity:0;
   transition:1s;
+  z-index:1;
 }
 .drop_table{
   width: 100%;
@@ -526,6 +527,7 @@ header{
 /*控制下拉栏显示  active*/
 .dropdown-item.active{
   opacity: 1;
+  z-index:5;
 }
 
 .drop_table{

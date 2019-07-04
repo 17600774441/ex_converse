@@ -151,24 +151,32 @@
         //进入注册展开栏的按钮 sign_on_btn
         var $sign_on_btn = document.getElementsByClassName("sign_on_btn")[0];
         //登录注册按钮后的精灵图(点击时toggle r_expand 的 active)
-        
         var $logo_before = document.getElementsByClassName("before")[0];
+        //下拉展开菜单
+        var $dropdown_item = document.getElementsByClassName("dropdown-item");
+        var shrink_dropdown = function(){
+          for(var key in $dropdown_item){
+            $dropdown_item[key].classList.remove("active");
+          }
+        }
           t_li_login[0].onclick = function(){
             $search_bar.classList.remove("active");
             $top_search.classList.remove("active");
+            shrink_dropdown();
           }
           $logo_before.onclick = function(){
             t_li_login[0].classList.toggle("active");
             r_expand[0].classList.toggle("active");
             $sign_in_top[0].classList.add("active");
             $sign_on_top[0].classList.remove("active");
-            
+            shrink_dropdown();
           }
           $sign_in.onclick = function(){
               r_expand[0].classList.add("active");
               t_li_login[0].classList.add("active");
               $sign_in_top[0].classList.add("active");
               $sign_on_top[0].classList.remove("active");
+              shrink_dropdown();
           }
           var signOnDrop = function (){
             r_expand[0].classList.add("active");
@@ -281,19 +289,24 @@
     //导航栏下展开控制器
     var $link_drop = document.getElementsByClassName("link_drop");
     var $dropdown_item = document.getElementsByClassName("dropdown-item");
+    var r_expand = document.getElementsByClassName("expand_box");
+    var $search_bar = document.getElementsByClassName("search_bar")[0];
     var drop= function (x) {
       var arr = [0,1,2];
       arr.splice(x,1);
       return function(){
-        $dropdown_item[x].classList.toggle("active");
-        $dropdown_item[arr[0]].classList.remove("active");
-        $dropdown_item[arr[1]].classList.remove("active");
-        
+        if(!$search_bar.classList.contains("active") && !r_expand[0].classList.contains("active")){
+          $dropdown_item[x].classList.add("active");
+          $dropdown_item[arr[0]].classList.remove("active");
+          $dropdown_item[arr[1]].classList.remove("active");
+        }else{
+          $dropdown_item[x].classList.remove("active");
+        }
       }
       
     };
     for(var i=0;i<3;i++ ){
-      $link_drop[i].onclick = drop(i);
+      $link_drop[i].onmouseover = drop(i);
     }
     
     
