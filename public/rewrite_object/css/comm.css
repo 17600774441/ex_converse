@@ -13,3 +13,33 @@ body{
   line-height:20px;
   margin-bottom:10px;
 }
+/*分栏标题样式  基本类*/
+.sale_title:before{
+  content:"";
+  display:block;
+  height:1px;
+  width:97%;
+  background:#b7b7b7;
+  position:absolute;
+  top:50%;left:1.5%;
+  z-index:1;
+}
+.sale_title{
+  margin:20px auto;
+  max-width:1000px;
+  height:30px;
+  position: relative;
+  text-align:center;
+}
+.sale_title>h1{
+  background:#fff;
+  position: relative;
+  z-index:5;
+  text-align:center;
+  display:inline;
+  padding:0 40px;
+  margin:0 auto;
+  font-size:30px;
+  line-height: 30px;
+  font-weight:normal;
+}

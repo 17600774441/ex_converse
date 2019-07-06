@@ -19,28 +19,53 @@
   /*--------------------用完之后要删除的代码----------------------------------*/
   background:#ff0;height:1000px;
 }
-/*首页分栏标题样式  基本类*/
-.sale_title{
-  width:100%;
-  height:30px;
-  position: relative;
-  /*--------------------用完之后要删除的代码----------------------------------*/
+/*首页商品分类栏*/
+.classify_content{
+  display: flex;
+  justify-content: space-around;
+  padding-top:20px;
 }
-.sale_title:before{
-  content:"";
+/*单个类别*/
+.classify_item{
+  max-width:24%;
+  cursor:pointer;
+}
+.classify_item img{
   display:block;
-  height:1px;
-  width: 98%;
-  background:#b7b7b7;
-  position:absolute;
-  top:50%;
-  z-index:1;
+  max-width:100%;
 }
-.sale_title>h1{
-  background:#fff;
-  position: relative;
-  z-index:5;
+.classify_item a{
+  width: 100%;
+  display:inline-block;
+  font-size:24px;
+  text-decoration: none;
+  color:#333;
   text-align:center;
-  width:150px;
-  margin:0 auto;
+}
+.classify_item:hover>a{
+  text-decoration: underline;
+}
+.sale_title>.arrow_img{
+  background:url(../image/pc/active.png) no-repeat;
+  width: 39px;height: 21px;
+  position: absolute;
+  top:15px;z-index:5;
+  /*9%  35%  60%  85%*/
+  left:9%;
+  transition:1s;
+}
+/*每一栏*/
+.sale_list li{
+  display:flex;
+}
+/*单个商品基础类*/
+.sale_item{
+  width:25%;
+  height:300px;
+  position:relative;
+  font-size:14px;
+  box-sizing:border-box;
+}
+.sale_item img{
+  max-width:100%;
 }

@@ -63,6 +63,94 @@
     <div class="sale_title">
       <h1>热卖单品</h1>
     </div>
+    <div class="classify_content">
+      <div class="classify_item">
+        <a href="javascript:void(0)">男的踩的</a>
+        <img src="./image/home/top_02_1203.jpg" alt="">
+      </div>
+      <div class="classify_item">
+        <a href="javascript:void(0)">女的踩的</a>
+        <img src="./image/home/top_01_1203.jpg" alt="">
+      </div>
+      <div class="classify_item">
+        <a href="javascript:void(0)">穿的</a>
+        <img src="./image/home/top_01_05.jpg" alt="">
+      </div>
+      <div class="classify_item">
+        <a href="javascript:void(0)">戴的</a>
+        <img src="./image/home/top_01_07.jpg" alt="">
+      </div>
+    </div>
+    <div class="sale_title">
+      <div class="arrow_img"></div>
+    </div>
+    
+    <div class="sale_list">
+      <div class="sale_list visible">
+        <ul>
+          <li>
+            <dl class = "sale_item">
+              <dd><img src="./image/index_sale/male/164965C102_1B_NEW.png" alt=""></dd>
+              <dd><p class="sale_title">【男女同款】Chuck 70</p></dd>
+              <dd><p class="sale_price">¥599.00</p></dd>
+            </dl>
+            <dl class="sale_item">
+              <dd><img src="./image/index_sale/male/164965C102_1B_NEW.png" alt=""></dd>
+              <dd>
+                <p class="sale_title">【男女同款】Chuck 70</p>
+              </dd>
+              <dd>
+                <p class="sale_price">¥599.00</p>
+              </dd>
+            </dl>
+            <dl class="sale_item">
+              <dd><img src="./image/index_sale/male/164965C102_1B_NEW.png" alt=""></dd>
+              <dd>
+                <p class="sale_title">【男女同款】Chuck 70</p>
+              </dd>
+              <dd>
+                <p class="sale_price">¥599.00</p>
+              </dd>
+            </dl>
+            <dl class="sale_item">
+              <dd><img src="./image/index_sale/male/164965C102_1B_NEW.png" alt=""></dd>
+              <dd>
+                <p class="sale_title">【男女同款】Chuck 70</p>
+              </dd>
+              <dd>
+                <p class="sale_price">¥599.00</p>
+              </dd>
+            </dl>
+          </li>
+          <li></li>
+        </ul>
+      </div>
+    </div>
+    <script>
+      (function () {
+        var $classify_item = document.getElementsByClassName("classify_item");
+        var $arrow_img = document.getElementsByClassName("arrow_img")[0];
+        Array.prototype.forEach.call($classify_item, function (elem, i) {
+          if (i == 0) {
+            elem.onmouseover = function () {
+              $arrow_img.style.left = "9%";
+            }
+          } else if (i == 1) {
+            elem.onmouseover = function () {
+              $arrow_img.style.left = "35%";
+            }
+          } else if (i == 2) {
+            elem.onmouseover = function () {
+              $arrow_img.style.left = "60%";
+            }
+          } else if (i == 3) {
+            elem.onmouseover = function () {
+              $arrow_img.style.left = "85%";
+            }
+          }
+        });
+      })()
+    </script>
   </div>
 </body>
 </html>
