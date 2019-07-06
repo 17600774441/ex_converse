@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/comm.css">
+  <link rel="stylesheet" href="css/salelist.css">
+</head>
+<body>
+  <div class="sale_title">
+    <h1>男的/踩的/65件商品</h1>
+  </div>
+  <div class="content">
+    
+    <div id="filter">
+      <div class="filter_top">
+        <p>筛选</p>
+        <hr>
+        <!-- 筛选条件栏目 -->
+        <dl class="filter_condition">
+            条件都在这里
+        </dl>
+      </div>
+      <div class="fold_bar">
+        <dl class="one_fold">
+          <dt class="open">系列</dt>
+          <dd><div class="checkbox">CHUNK 70</div></dd>
+          <dd><div class="checkbox">ONE STAR</div></dd>
+          <dd><div class="checkbox">Jack Purcell</div></dd>
+          <dd><div class="checkbox">Chuck Taylor All Star</div></dd>
+          <dd><div class="checkbox">CONS</div></dd>
+        </dl>
+        <dl class="one_fold">
+          <dt class="open">季节</dt>
+          <dd><div class="checkbox">春季</div></dd>
+          <dd><div class="checkbox">夏季</div></dd>
+          <dd><div class="checkbox">秋季</div></dd>
+          <dd><div class="checkbox">冬季</div></dd>
+        </dl>
+        <dl class="one_fold">
+          <dt class="open">儿童</dt>
+          <dd><div class="checkbox">儿童</div></dd>
+        </dl>
+        <dl class="one_fold">
+          <dt class="open">产品分类</dt>
+          <dd><div class="checkbox">低帮</div></dd>
+          <dd><div class="checkbox">高帮</div></dd>
+        </dl>
+        <dl class="one_fold">
+          <dt class="open">尺码</dt>
+          <dd class="no_hover">
+            <ul class="size_bar">
+              <li>35</li>
+              <li>35.5</li>
+              <li>36</li>
+              <li>36.5</li>
+              <li>37</li>
+              <li>37.5</li>
+              <li>38</li>
+              <li>38.5</li>
+              <li>39</li>
+              <li>39.5</li>
+              <li>40</li>
+              <li>40.5</li>
+              <li>41</li>
+              <li>41.5</li>
+              <li>42</li>
+              <li>42.5</li>
+              <li>43</li>
+              <li>44</li>
+              <li>44.5</li>
+              <li>45</li>
+            </ul>
+          </dd>
+        </dl>
+        <dl class="one_fold">
+          <dt class="open">价格</dt>
+          <dd>
+            <div class="checkbox">0-299</div>
+          </dd>
+          <dd>
+            <div class="checkbox">300-399</div>
+          </dd>
+          <dd>
+            <div class="checkbox">400-499</div>
+          </dd>
+          <dd>
+            <div class="checkbox">500-599</div>
+          </dd>
+          <dd>
+            <div class="checkbox">600-699</div>
+          </dd>
+          <dd>
+            <div class="checkbox">700+</div>
+          </dd>
+        </dl>
+      </div>
+    </div>
+    <script src="JS/checkbox.js"></script>
+    <script>
+      // 手写手风琴
+      (window.onload =function(){
+        var $one_fold = document.getElementsByClassName("one_fold");
+        for (var i = 0; i < $one_fold.length; i++) {
+          $one_fold[i].firstElementChild.onclick = opened.bind($one_fold[i]);
+          function opened(){
+            if(this.classList.contains("active")){
+              this.classList.remove("active");
+            }else if(!this.classList.contains("active")){
+              for(var i = 0; i< $one_fold.length;i++){
+                $one_fold[i].classList.remove("active");
+              }
+              this.classList.add("active");
+            }
+          }
+        }
+      })();
+      
+    </script>
+
+    <div id="sale_list">
+      <div id="sort_list">
+        <span>排序</span>
+        <button class="">默认</button>
+        <button class="">▲ 价格 ▼</button>
+        <button class="">最喜欢</button>
+        <button class="">最畅销</button>
+      </div>
+      <dl class="sale_item">
+        <dd><img src="./image/index_sale/female/164964C001_1B_NEW.png" alt=""></dd>
+        <dd>
+          <p class="sale_name">【男女同款】Chuck 70</p>
+        </dd>
+        <dd>
+          <p class="sale_price">¥599.00</p>
+        </dd>
+      </dl>
+      <dl class="sale_item">
+        <dd><img src="./image/index_sale/female/164964C001_1B_NEW.png" alt=""></dd>
+        <dd>
+          <p class="sale_name">【男女同款】Chuck 70</p>
+        </dd>
+        <dd>
+          <p class="sale_price">¥599.00</p>
+        </dd>
+      </dl>
+      <dl class="sale_item">
+        <dd><img src="./image/index_sale/female/164964C001_1B_NEW.png" alt=""></dd>
+        <dd>
+          <p class="sale_name">【男女同款】Chuck 70</p>
+        </dd>
+        <dd>
+          <p class="sale_price">¥599.00</p>
+        </dd>
+      </dl>
+      <dl class="sale_item">
+        <dd><img src="./image/index_sale/female/164964C001_1B_NEW.png" alt=""></dd>
+        <dd>
+          <p class="sale_name">【男女同款】Chuck 70</p>
+        </dd>
+        <dd>
+          <p class="sale_price">¥599.00</p>
+        </dd>
+      </dl>
+      <dl class="sale_item">
+        <dd><img src="./image/index_sale/female/164964C001_1B_NEW.png" alt=""></dd>
+        <dd>
+          <p class="sale_name">【男女同款】Chuck 70</p>
+        </dd>
+        <dd>
+          <p class="sale_price">¥599.00</p>
+        </dd>
+      </dl>
+      <dl class="sale_item">
+        <dd><img src="./image/index_sale/female/164964C001_1B_NEW.png" alt=""></dd>
+        <dd>
+          <p class="sale_name">【男女同款】Chuck 70</p>
+        </dd>
+        <dd>
+          <p class="sale_price">¥599.00</p>
+        </dd>
+      </dl>
+    </div>
+  </div>
+  
+</body>
+</html>

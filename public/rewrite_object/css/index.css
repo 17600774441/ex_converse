@@ -69,42 +69,6 @@
   margin-bottom:20px;
   padding-bottom:20px;
 }
-/*单个商品      基础类*/
-.sale_item{
-  width:25%;
-  height:300px;
-  position:relative;
-  font-family:"Impact";
-  font-size:14px;
-  box-sizing:border-box;
-  padding:40px;
-  padding-top:0;
-  text-align:center;
-}
-.sale_item img{
-  max-width:100%;
-  margin-bottom:9.1%;
-  transition:300ms;
-}
-.sale_item .sale_name{
-  height:55px;
-}
-/*边框从黑变灰动画*/
-@keyframes sale_hover{
-  from {border:1px solid #000;}
-  to {border:1px solid #ccc;}
-}
-.sale_item li:not(:last-child){
-  min-height:330px;
-}
-.sale_item:hover{
-  animation:sale_hover 500ms;
-  animation-fill-mode: forwards;
-  padding:-2px 38px 40px;
-}
-.sale_item:hover>dd>img{
-  transform:scale(1.1);
-}
 
 .sale_list{
   position: relative;
@@ -133,10 +97,6 @@
 }
 /*一二楼响应式*/
 @media (max-width:768px){
-  .sale_item{
-    width:50%;
-    height:350px;
-  }
   .sale_list{
     height:1520px;
   }

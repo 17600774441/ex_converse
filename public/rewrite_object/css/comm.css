@@ -110,3 +110,73 @@ body{
 .btn:hover:after{
   background-position:-43px -164px;
 }
+
+/*单个商品      基础类*/
+.sale_item{
+  width:25%;
+  height:300px;
+  position:relative;
+  font-family:"Impact";
+  font-size:14px;
+  box-sizing:border-box;
+  padding:40px;
+  padding-top:0;
+  text-align:center;
+}
+.sale_item img{
+  max-width:170px;
+  margin-bottom:9.1%;
+  transition:300ms;
+}
+.sale_item .sale_name{
+  height:55px;
+}
+/*边框从黑变灰动画*/
+@keyframes sale_hover{
+  from {border:1px solid #000;}
+  to {border:1px solid #ccc;}
+}
+.sale_item li:not(:last-child){
+  min-height:330px;
+}
+.sale_item:hover{
+  animation:sale_hover 500ms;
+  animation-fill-mode: forwards;
+  padding:-2px 38px 40px;
+}
+.sale_item:hover>dd>img{
+  transform:scale(1.1);
+}
+@media (max-width:768px){
+  .sale_item{
+    width:50% !important;
+    height:330px;
+  }
+}
+
+/* 选择框基本类 */
+.checkbox{
+  font-size:14px;
+  position:relative;
+  padding:1px;
+  box-sizing: border-box;
+  
+}
+.checkbox:before{
+  display:inline-block;
+  content:"";
+  width:14px;height:14px;
+  border:1px solid #b7b7b7;
+  vertical-align: middle;
+  margin-right:10px;
+  margin-top:-3px;
+}
+/* 选择框选中 */
+.checkbox.checked:before{
+  top:20%;
+  width:16px;height:16px;
+  border:2px solid #000;
+  margin-right:6px;
+  margin-top:-4px;
+  background:url(../image/cartcheck/cart-sprite1.png) no-repeat -3px -181px transparent;
+}

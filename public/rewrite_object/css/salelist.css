@@ -1,0 +1,127 @@
+/* 商品列表页样式 */
+
+.content{
+  max-width: 1000px;
+  margin:0 auto;
+  display:flex;
+}
+/* 左侧的筛选栏目 */
+#filter{
+  max-width:30%;
+  height: 500px;
+  flex-basis: 29%;
+  padding-right:30px;
+  padding-left:30px;
+  box-sizing: border-box;
+}
+/* 已经选择的条件栏目 */
+.filter_top{
+  border:1px solid #b7b7b7;
+  padding:10px 20px;
+}
+.filter_top >p:first-child{
+  font-size:20px;
+}
+.filter_top>hr{
+  margin:10px 0;
+  border:0.5px solid #b7b7b7;
+}
+/* 删选条件手风琴部分 */
+.fold_bar{
+  height:300px;
+  margin-top:30px;
+  box-sizing: border-box;
+}
+
+/*单个折叠栏   基础类*/
+.one_fold{
+  border-top:1px solid #b7b7b7;
+  font-family: "Impact";
+  height:50px;
+  overflow:hidden;
+  transition:1s;
+}
+.one_fold dt{
+  font-size:18px;
+  font-weight:bold;
+  padding:15px 0 ;
+  background:url(../image/pc/plus.png) no-repeat right center;
+  
+}
+
+.one_fold dd{
+  font-size:18px;
+  margin:15px 0 ;
+  transition:300ms;
+}
+.one_fold>dd:not([class ~="no_hover"]):hover{
+  color:#b7b7b7;
+  text-decoration: underline;
+}
+/* 鞋码栏 */
+.size_bar li{
+  float:left;
+  width: 49px;height: 39px;
+  border:1px solid #b7b7b7;
+  text-align:center;
+  font-size:14px;
+  line-height:39px;
+  box-sizing: border-box;
+  transition:200ms;
+  cursor:pointer;
+  margin:0 5px 7px 0;
+}
+.size_bar li:hover{
+  border:3px solid #000;
+}
+
+
+
+
+/* 写入active则展开 */
+.one_fold.active{
+  height:100%;
+}
+.one_fold.active dt{
+  background:url(../image/pc/minus.png) no-repeat right center;
+}
+
+/*最顶部一排排序方法按钮*/
+#sort_list>button{
+  background:#fff;
+  border:1px solid #b7b7b7;
+  padding:2px 10px;
+  outline:none;
+  cursor:pointer;
+}
+#sort_list>button+button{
+  margin-left:-5px;
+}
+#sort_list>span{
+  font-size:14px;
+  padding-right:20px;
+}
+/*右侧商品列表瀑布*/
+#sale_list{
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-basis: 70%;
+  margin-left:20px;
+}
+#sort_list{
+  flex-basis: 100%;
+  margin:0 0 20px 0;
+}
+#sale_list>.sale_item{
+  width:33.33%;
+}
+/* 最小屏幕时 不显示筛选栏 */
+@media (max-width:568px){
+  #filter{
+    display:none;
+  }
+  #sale_list{
+    flex-basis: 100%;
+  }
+}

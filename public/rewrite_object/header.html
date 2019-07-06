@@ -67,15 +67,8 @@
                 <div class="checkbox">
                   记住用户名
                 </div>
-                <script>
-                  (function(){
-                    // 记住用户名选中
-                    var $checkbox = document.getElementsByClassName("checkbox")[0];
-                    $checkbox.onclick = function(){
-                      $checkbox.classList.toggle("checked");
-                    }
-                  })();
-                </script>
+                <!-- checkbox脚本引入 -->
+                <script src="JS/checkbox.js"></script>
                 <a href="JavaScript:void(0)">忘记密码?</a>
               </dd> 
           </dl>
@@ -108,7 +101,8 @@
             </dl>
             <dl class="sign_on_right">
                 <dd><p class="font-sm">性别 <span style="color:#f00;">*</span></p>
-                  <span class="checkbox checked font-sm">男的</span><span class="checkbox">女的</span>
+                  <div class="checkbox checked">男的</div>
+                  <div class="checkbox">女的</div>
                 </dd>
                 <dd><p class="font-sm" style="margin-top:25px;">生日（年-月-日）<span style="color:#f00;">*</></p>
                   <input type="text" class="form_input" placeholder="您的生日:yyyy-mm-dd">
@@ -129,83 +123,7 @@
         <div class="go_close"></div>
       </div>
     </div>
-    <script>
-      //登录展开栏
-      (function(){
-        //登陆注册的按钮(有active时出现下三角箭头)
-        var t_li_login = document.getElementsByClassName("top_login");
-        //展开栏(有active时展开)
-        var r_expand = document.getElementsByClassName("expand_box");
-        //登陆的a标签
-        var $sign_in = document.getElementById("sign_in");
-        //注册的a标签
-        var $sign_on = document.getElementById("sign_on");
-        //登录表单栏(active时显示)
-        var $sign_in_top = document.getElementsByClassName("sign_in_top");
-        //注册表单栏(active时显示)
-        var $sign_on_top = document.getElementsByClassName("sign_on_top");
-        //搜索的按钮(有active时出现下三角箭头)
-        var $top_search = document.getElementsByClassName("top_search")[0];
-        //搜索的表单栏(active时显示)
-        var $search_bar = document.getElementsByClassName("search_bar")[0];
-        //进入注册展开栏的按钮 sign_on_btn
-        var $sign_on_btn = document.getElementsByClassName("sign_on_btn")[0];
-        //登录注册按钮后的精灵图(点击时toggle r_expand 的 active)
-        var $logo_before = document.getElementsByClassName("before")[0];
-        //下拉展开菜单
-        var $dropdown_item = document.getElementsByClassName("dropdown-item");
-        var shrink_dropdown = function(){
-          for(var key in $dropdown_item){
-            $dropdown_item[key].classList.remove("active");
-          }
-        }
-          t_li_login[0].onclick = function(){
-            $search_bar.classList.remove("active");
-            $top_search.classList.remove("active");
-            shrink_dropdown();
-          }
-          $logo_before.onclick = function(){
-            t_li_login[0].classList.toggle("active");
-            r_expand[0].classList.toggle("active");
-            $sign_in_top[0].classList.add("active");
-            $sign_on_top[0].classList.remove("active");
-            shrink_dropdown();
-          }
-          $sign_in.onclick = function(){
-              r_expand[0].classList.add("active");
-              t_li_login[0].classList.add("active");
-              $sign_in_top[0].classList.add("active");
-              $sign_on_top[0].classList.remove("active");
-              shrink_dropdown();
-          }
-          var signOnDrop = function (){
-            r_expand[0].classList.add("active");
-            t_li_login[0].classList.add("active");
-            $sign_in_top[0].classList.remove("active");
-            $sign_on_top[0].classList.add("active");
-          }
-          $sign_on.onclick = signOnDrop;
-          $sign_on_btn.onclick = signOnDrop;
-      })();
-      //搜索栏展开
-      (function(){
-        var t_li_login = document.getElementsByClassName("top_login");
-        var r_expand = document.getElementsByClassName("expand_box");
-        var $top_search = document.getElementsByClassName("top_search")[0];
-        var $search_bar = document.getElementsByClassName("search_bar")[0];
-        var $go_close = document.getElementsByClassName("go_close")[0];
-        $top_search.onclick=function(){
-          $top_search.classList.toggle("active");
-          r_expand[0].classList.remove("active");
-          t_li_login[0].classList.remove("active");
-          $search_bar.classList.toggle("active");
-        }
-        $go_close.onclick = function(){
-          $top_search.classList.toggle("active");
-          $search_bar.classList.toggle("active");
-        }
-      })()
-    </script>
+
     <nav class = "top_nav_bar">
       <ul class="top_nav">
         <li class="top_nav_link link_drop">男的</li>
@@ -267,6 +185,85 @@
         </li>
       </ul>
     </nav>
+    <script>
+      //登录展开栏
+      (function(){
+        //登陆注册的按钮(有active时出现下三角箭头)
+        var t_li_login = document.getElementsByClassName("top_login");
+        //展开栏(有active时展开)
+        var r_expand = document.getElementsByClassName("expand_box");
+        //登陆的a标签
+        var $sign_in = document.getElementById("sign_in");
+        //注册的a标签
+        var $sign_on = document.getElementById("sign_on");
+        //登录表单栏(active时显示)
+        var $sign_in_top = document.getElementsByClassName("sign_in_top");
+        //注册表单栏(active时显示)
+        var $sign_on_top = document.getElementsByClassName("sign_on_top");
+        //搜索的按钮(有active时出现下三角箭头)
+        var $top_search = document.getElementsByClassName("top_search")[0];
+        //搜索的表单栏(active时显示)
+        var $search_bar = document.getElementsByClassName("search_bar")[0];
+        //进入注册展开栏的按钮 sign_on_btn
+        var $sign_on_btn = document.getElementsByClassName("sign_on_btn")[0];
+        //登录注册按钮后的精灵图(点击时toggle r_expand 的 active)
+        var $logo_before = document.getElementsByClassName("before")[0];
+        //下拉展开菜单
+        var $dropdown_item = document.getElementsByClassName("dropdown-item");
+        var shrink_dropdown = function(){
+          for(var key in $dropdown_item){
+            if($dropdown_item[key].classList){
+              $dropdown_item[key].classList.remove("active");
+            }  
+          }
+        }
+          t_li_login[0].onclick = function(){
+            $search_bar.classList.remove("active");
+            $top_search.classList.remove("active");
+            shrink_dropdown();
+          }
+          $logo_before.onclick = function(){
+            t_li_login[0].classList.toggle("active");
+            r_expand[0].classList.toggle("active");
+            $sign_in_top[0].classList.add("active");
+            $sign_on_top[0].classList.remove("active");
+            shrink_dropdown();
+          }
+          $sign_in.onclick = function(){
+              r_expand[0].classList.add("active");
+              t_li_login[0].classList.add("active");
+              $sign_in_top[0].classList.add("active");
+              $sign_on_top[0].classList.remove("active");
+              shrink_dropdown();
+          }
+          var signOnDrop = function (){
+            r_expand[0].classList.add("active");
+            t_li_login[0].classList.add("active");
+            $sign_in_top[0].classList.remove("active");
+            $sign_on_top[0].classList.add("active");
+          }
+          $sign_on.onclick = signOnDrop;
+          $sign_on_btn.onclick = signOnDrop;
+      })();
+      //搜索栏展开
+      (function(){
+        var t_li_login = document.getElementsByClassName("top_login");
+        var r_expand = document.getElementsByClassName("expand_box");
+        var $top_search = document.getElementsByClassName("top_search")[0];
+        var $search_bar = document.getElementsByClassName("search_bar")[0];
+        var $go_close = document.getElementsByClassName("go_close")[0];
+        $top_search.onclick=function(){
+          $top_search.classList.toggle("active");
+          r_expand[0].classList.remove("active");
+          t_li_login[0].classList.remove("active");
+          $search_bar.classList.toggle("active");
+        }
+        $go_close.onclick = function(){
+          $top_search.classList.toggle("active");
+          $search_bar.classList.toggle("active");
+        }
+      })()
+    </script>
   </header>
   <script>
     window.onscroll=function(){
@@ -311,6 +308,5 @@
     
     
   </script>
-  <div style = "font-size:30px;height:999px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor iure magni, ducimus deserunt suscipit sequi odit quam maxime necessitatibus, quibusdam, omnis ut culpa atque velit earum architecto delectus doloremque nulla.</div>
 </body>
 </html>
