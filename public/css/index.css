@@ -394,37 +394,37 @@ a.bottom-button{
   text-align:center;
 /*  background:#ff0;*/
 }
-.share-link>a{
+.share_icon li{
   width:75px;height:75px;
   display:block;
   float:left;
   margin:0 15px;
   background:url(../image/home/share.png);
 }
-.share-link>a:first-child{
+.share_icon li:first-child{
   background-position:75px 0;
 
-}.share-link>a:first-child:hover{
+}.share_icon li:first-child:hover{
   background-position:0 0;
 }
-.share-link>a:nth-child(2){
+.share_icon li:nth-child(2){
   background-position:-75px -75px;
-}.share-link>a:nth-child(2):hover{
+}.share_icon li:nth-child(2):hover{
   background-position:0px -75px;
 }
-.share-link>a:nth-child(3){
+.share_icon li:nth-child(3){
   background-position:-75px -150px;
-}.share-link>a:nth-child(3):hover{
+}.share_icon li:nth-child(3):hover{
   background-position:0px -150px;
 }
-.share-link>a:nth-child(4){
+.share_icon li:nth-child(4){
   background-position:-75px -225px;
-}.share-link>a:nth-child(4):hover{
+}.share_icon li:nth-child(4):hover{
   background-position:0px -225px;
 }
-.share-link>a:nth-child(5){
+.share_icon li:nth-child(5){
   background-position:-75px -300px;
-}.share-link>a:nth-child(5):hover{
+}.share_icon li:nth-child(5):hover{
   background-position:0px -300px;
 }
 #footer{

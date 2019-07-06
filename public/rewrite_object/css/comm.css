@@ -2,6 +2,9 @@
   margin:0;padding:0;
   user-select: none;  
 }
+ul,dl,ol{
+  list-style: none;
+}
 body{
   color:#333;
   background:#fff;
@@ -42,4 +45,68 @@ body{
   font-size:30px;
   line-height: 30px;
   font-weight:normal;
+}
+/*全站新闻标题样式  基本类*/
+.news_title{
+  margin:40px auto 20px;
+  max-width:1000px;
+  height:40px;
+  position: relative;
+  text-align:left;
+  padding-left:20px;
+  line-height:40px;
+  background:#464646;
+}
+.news_title:before{
+  content:"";
+  background:url(../image/home/logo-icon.png) no-repeat;
+  width:19px;
+  height: 19px;
+  display:inline-block;
+  vertical-align:middle;
+  margin-top:-7px;
+}
+.news_title>h1{
+  text-align:center;
+  color:#fff;
+  display:inline;
+  margin:0 10px;
+  font-size:18px;
+  font-weight:normal;
+}
+/*按钮基础类  btn*/
+.btn{
+  background-color:#000;
+  color:#fff;
+  cursor:pointer;
+  font-size:18px;
+  height:40px;
+  line-height:38px;
+  text-align:center;
+  word-wrap:none;
+  white-space: nowrap;
+  width:100%;
+  box-sizing:border-box;
+  border:1px solid #000;
+  transition:500ms;
+  text-decoration:none;
+  display:block;
+  overflow:hidden;
+}
+.btn:after{
+  background:url(../image/commons/sprites_header_footer.png) no-repeat scroll -10px -164px transparent;
+  width:15px;height:28px;
+  display:inline-block;
+  vertical-align: middle;
+  margin-left:12px;
+  content: "";
+  transition:500ms;
+}
+.btn:hover{
+  background-color:transparent;
+  color:#000;
+  border:1px solid #999;
+}
+.btn:hover:after{
+  background-position:-43px -164px;
 }

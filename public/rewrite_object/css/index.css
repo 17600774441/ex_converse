@@ -2,6 +2,7 @@
 .notice_bar{
   width: 100%;
   padding:10px 0;
+  text-align:center;
 }
 .notice{
   padding:0 10px;
@@ -11,13 +12,12 @@
   text-decoration:none;
   display:inline-block;
 }
-/*首页一楼*/
-.hot_sale{
+/*首页一楼/二楼/三楼*/
+.hot_sale,.new_sale_bar,.site_news{
   width:100%;
   max-width:1000px;
-  margin:35px auto 0;
+  margin:50px auto 0;
   /*--------------------用完之后要删除的代码----------------------------------*/
-  background:#ff0;height:1000px;
 }
 /*首页商品分类栏*/
 .classify_content{
@@ -57,15 +57,200 @@
 /*每一栏*/
 .sale_list li{
   display:flex;
+  flex-wrap:wrap;
 }
-/*单个商品基础类*/
+.sale_list .btn{
+  margin:20px auto;
+  width:40%;
+  font-size:16px;
+}
+.sale_list li:first-child{
+  border-bottom:1px dotted #b7b7b7;
+  margin-bottom:20px;
+  padding-bottom:20px;
+}
+/*单个商品      基础类*/
 .sale_item{
   width:25%;
   height:300px;
   position:relative;
+  font-family:"Impact";
   font-size:14px;
   box-sizing:border-box;
+  padding:40px;
+  padding-top:0;
+  text-align:center;
 }
 .sale_item img{
   max-width:100%;
+  margin-bottom:9.1%;
+  transition:300ms;
+}
+.sale_item .sale_name{
+  height:55px;
+}
+/*边框从黑变灰动画*/
+@keyframes sale_hover{
+  from {border:1px solid #000;}
+  to {border:1px solid #ccc;}
+}
+.sale_item li:not(:last-child){
+  min-height:330px;
+}
+.sale_item:hover{
+  animation:sale_hover 500ms;
+  animation-fill-mode: forwards;
+  padding:-2px 38px 40px;
+}
+.sale_item:hover>dd>img{
+  transform:scale(1.1);
+}
+
+.sale_list{
+  position: relative;
+  height:700px;
+}
+.sale_list_one{
+  position: absolute;
+  opacity:0;
+  transition:1s;
+  z-index:1;
+}
+.sale_list_one.visible{
+  opacity:1;
+  z-index:5;
+}
+
+/*--------------------------首页二楼-----------------*/
+.sale_2f ul li{
+  display:flex;
+  flex-wrap: wrap
+}
+.sale_2f ul li:not(:last-child){
+  border-bottom:1px dotted #b7b7b7;
+  margin-bottom:20px;
+  padding-bottom:20px;
+}
+/*一二楼响应式*/
+@media (max-width:768px){
+  .sale_item{
+    width:50%;
+    height:350px;
+  }
+  .sale_list{
+    height:1520px;
+  }
+}
+
+
+/*--------------------------首页三楼-----------------*/
+
+/* news使用弹性布局 */
+.news_nF{
+  display:flex;
+  justify-content:space-between;
+}
+/* news 图片 */
+.news_one > img{
+  border:1px solid #b7b7b7;
+  transition:500ms;
+  background:#000;
+  display:block;
+  max-width: 100%;
+}
+.news_one:hover>img{
+  opacity:0.6;
+}
+/* news标题 */
+.news_one>.one_title{
+  font-size:24px;
+  display:block;
+  margin:15px 0;
+  color:#333;
+  text-decoration: none;
+  transition:500ms;
+}
+.news_one>.one_title:hover{
+  text-decoration: underline;
+  color:#999;
+}
+/* news按钮 */
+.news_one>a.btn{
+  width: 40%;
+  height: 50px;
+  line-height:50px;
+}
+.news_one{
+  min-width:250px;
+}
+@media (max-width:567px){
+  .news_one{
+    max-width:100%;
+    margin:10px 0;
+  }
+  .news_nF{
+    flex-wrap: wrap;
+  }
+}
+/* 分享栏 关注部分栏目------------------------------ */
+.share_bar{
+  height:359px;
+  background:#464646;
+  margin:60px 0;
+  text-align:center;
+  color:#fff;
+  font-family: "Impact";
+}
+.share_bar:before{
+  content:"";
+  display:table;
+}
+.share_bar>h1{
+  display: block;
+  margin:78px 0 35px;
+  font-size:30px;
+}
+.share_bar>p{
+  font-size:16px;
+  margin:40px 0;
+}
+
+/* 分享栏目图标 */
+.share_icon{
+  width: 525px;
+  margin:0 auto;
+  display:flex;
+  justify-content: space-between
+}
+.share_icon li{
+  width: 75px;height: 75px;
+  background:url(../image/home/share.png) no-repeat;
+  transition:300ms;
+  cursor:pointer;
+}
+/* 分享到微博 */
+.share_icon li:first-child{
+  background-position:-75px 0;
+}.share_icon li:first-child:hover{
+  background-position:0 0;
+}
+.share_icon li:nth-child(2){
+  background-position:-75px -75px;
+}.share_icon li:nth-child(2):hover{
+  background-position:0px -75px;
+}
+.share_icon li:nth-child(3){
+  background-position:-75px -150px;
+}.share_icon li:nth-child(3):hover{
+  background-position:0px -150px;
+}
+.share_icon li:nth-child(4){
+  background-position:-75px -225px;
+}.share_icon li:nth-child(4):hover{
+  background-position:0px -225px;
+}
+.share_icon li:nth-child(5){
+  background-position:-75px -300px;
+}.share_icon li:nth-child(5):hover{
+  background-position:0px -300px;
 }

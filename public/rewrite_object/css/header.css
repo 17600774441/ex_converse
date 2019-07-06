@@ -214,38 +214,7 @@ header{
   font-size:24px;
   margin:0 0 20px;
 }
-/*按钮基础类  btn*/
-.btn{
-  background-color:#000;
-  color:#fff;
-  cursor:pointer;
-  font-size:18px;
-  height:40px;
-  line-height:38px;
-  text-align:center;
-  word-wrap:none;
-  width:100%;
-  box-sizing:border-box;
-  border:1px solid #000;
-  transition:500ms;
-}
-.btn:after{
-  background:url(../image/commons/sprites_header_footer.png) no-repeat scroll -10px -164px transparent;
-  width:15px;height:28px;
-  display:inline-block;
-  vertical-align: middle;
-  margin-left:12px;
-  content: "";
-  transition:500ms;
-}
-.btn:hover{
-  background-color:transparent;
-  color:#000;
-  border:1px solid #999;
-}
-.btn:hover:after{
-  background-position:-43px -164px;
-}
+
 /* 支付宝微博登陆API按钮 */
 #login_to_alipay,#login_to_sina{
   display:inline-block;
