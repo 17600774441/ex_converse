@@ -124,7 +124,7 @@ body{
   text-align:center;
 }
 .sale_item img{
-  max-width:170px;
+  max-width:100%;
   margin-bottom:9.1%;
   transition:300ms;
 }
@@ -142,7 +142,8 @@ body{
 .sale_item:hover{
   animation:sale_hover 500ms;
   animation-fill-mode: forwards;
-  padding:-2px 38px 40px;
+  padding-left:40px;
+  padding-top:1px;
 }
 .sale_item:hover>dd>img{
   transform:scale(1.1);
@@ -150,7 +151,7 @@ body{
 @media (max-width:768px){
   .sale_item{
     width:50% !important;
-    height:330px;
+    height:350px;
   }
 }
 
