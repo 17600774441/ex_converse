@@ -130,6 +130,7 @@ body{
 }
 .sale_item .sale_name{
   height:55px;
+  margin:0 -10px;
 }
 /*边框从黑变灰动画*/
 @keyframes sale_hover{
