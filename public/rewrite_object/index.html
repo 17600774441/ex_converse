@@ -421,7 +421,7 @@
         function visied(n){
           var arr = [0,1,2,3];
           arr.splice(n,1);
-          for(var key in arr){
+          for (var key=0;key<arr.length;key++){
             $sale_list_one[arr[key]].classList.remove("visible");
             $sale_list_one[n].classList.add("visible");
           }
