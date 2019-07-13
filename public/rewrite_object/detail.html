@@ -16,6 +16,9 @@
         <div class="detail_share">分享</div>
         <div class="detail_favorite">加入收藏(999+)</div>
         <div class="detail_stars"></div>
+        <div id="biglass">
+          <img src="./image/162050C001/162050C001_1L_NEW.png" alt="">
+        </div>
       </div>
       <!-- 中间图片展示和文字说明 -->
       <div class="top_center">
@@ -24,7 +27,55 @@
           <h1>价格 ￥569.00</h1>
         </div>
         <div class="info_img">
-          <img class="primary_img" src="./image/162050C001/162050C001_1H_NEW.png" alt="">
+          <div id="biglass_img">
+            <img class="primary_img" src="./image/162050C001/162050C001_1H_NEW.png" alt="">
+            <div id="imgDark"></div>
+          </div>
+          <script>
+            // 尝试手写放大镜
+            window.onload=function(){
+              var $imgDark = document.getElementById("imgDark");
+              var $biglass_img = document.getElementById("biglass_img");
+              var $biglass = document.getElementById("biglass");
+              var small_img = $biglass_img.getElementsByTagName("img")[0];
+              var big_img = $biglass.getElementsByTagName("img")[0];
+              // 遮挡层和放大镜大图 的显示隐藏
+              $biglass_img.onmouseover = function(){
+                $imgDark.style.display = "block";
+                $biglass.style.display = "block"
+              }
+              $biglass_img.onmouseout = function () {
+                $imgDark.style.display = "none";
+                $biglass.style.display = "none"
+              }
+              console.log(big_img)
+              // 遮罩层跟随鼠标移动:
+              $biglass_img.addEventListener("mousemove",function(m){
+                var darkStyle = getComputedStyle($imgDark);
+                var t2screen = document.documentElement.scrollTop;
+                // 鼠标距离窗口左侧的距离  - 图片距离窗口左侧的距离 - 遮罩层的宽度/2
+                var left = m.clientX -this.offsetLeft- parseInt(darkStyle.width)/2;
+                //    鼠标y轴(相对于窗口)的距离 - 窗口向下滚动的距离 - 图片距离窗口顶部的距离-遮罩层高度/2
+                var top = m.clientY + t2screen -  this.offsetTop - parseInt(darkStyle.height) / 2;
+                //防止出现负数或者大于图片大小导致 遮罩层跑出图片范围
+                if(top<0){
+                  top=0
+                }else if(top> this.offsetHeight - $imgDark.offsetHeight){
+                  top = this.offsetHeight - $imgDark.offsetHeight;
+                }
+                if(left<0){
+                  left = 0
+                }else if(left> this.offsetWidth - $imgDark.offsetWidth){
+                  left = this.offsetWidth - $imgDark.offsetWidth;
+                }
+                // 控制遮罩层以及大图的位置
+                $imgDark.style.left = left + "px" ;
+                $imgDark.style.top = top + "px" ;
+                big_img.style.left = -(left*4)+140 + "px";
+                big_img.style.top = -(top*4)-100 + "px";
+              });
+            }
+          </script>
           <div class="thumbnail_bar">
             <div class="active"><img src="./image/162050C001/162050C001_1S_NEW.png" alt=""></div>
             <div><img src="./image/162050C001/162050C001_2S_NEW.png" alt=""></div>
