@@ -5,6 +5,15 @@ header{
   top:0;
   z-index:999;
 }
+/* 小屏时不固定 */
+@media (max-width:576px){
+  header{
+    position:relative;
+  }
+  .stickspace{
+    display:none;
+  }
+}
 .top_func_bar{
   height:80px;
   max-width:100%;
@@ -481,13 +490,10 @@ header{
 
 .drop_table{
   box-sizing:border-box;
-  border-bottom:1px solid #999;
 }
 .drop_row{
   display:flex;
   padding-left:10%;
-}
-.drop_row:first-child{
   border-bottom:1px solid #999;
 }
 .drop_row>a{
@@ -516,10 +522,9 @@ header{
   .drop_row>a{
     font-size:12px;
   }
-  .drop_row>a:last-child>span{
-    font-size:9px;
-    width:30px;
-  }
+  .drop_row{
+    padding-left:0;
+  } 
   .top_nav{
     font-size:14px;
   }
