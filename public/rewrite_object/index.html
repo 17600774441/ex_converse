@@ -21,42 +21,21 @@
     <ul class="carousel">
       <li class="carousel-item active"><img src="image/pc/aspbb_kv_pc_pre_20190530.jpg" alt=""></li>
       <li class="carousel-item"><img src="image/pc/erx_su19_kv_pc_190606.jpg" alt=""></li>
-      <li class="carousel-item"><img src="image/pc/jp_gold_kv_pc_190426.jpg" alt=""></li>
       <li class="carousel-item"><img src="image/pc/pride_kv_pc_20190605.jpg" alt=""></li>
+      <li class="carousel-item"><img src="image/pc/jp_gold_kv_pc_190426.jpg" alt=""></li>
     </ul>
     <ul class="carousel-pointer">
-      <li class="carousel-link active">All Star</li>
-      <li class="carousel-link">PRIDE</li>
-      <li class="carousel-link">ERX</li>
-      <li class="carousel-link">JP GOLD</li>
-    </ul>  
+      <li data-target="0"class="carousel-link active">All Star</li>
+      <li data-target="1"class="carousel-link">PRIDE</li>
+      <li data-target="2"class="carousel-link">ERX</li>
+      <li data-target="3"class="carousel-link">JP GOLD</li>
+    </ul>
+    <ul class="lrBtn">
+      <li class = "next-btn"><span class="icon"></span></li>
+      <li class = "prev-btn"><span class="icon"></span></li>
+    </ul>
   </div>
-  <script>
-    //轮播图手写尝试
-    window.onload = function(){
-      var arr_pic = document.getElementsByClassName("carousel-item"),i=1;
-      var arr_pointer = document.getElementsByClassName("carousel-link");
-      var nextPic = setInterval(function(){
-        arr_pic[i-1].classList.remove("active");
-        arr_pointer[i-1].classList.remove("active");
-        if(i<arr_pic.length){
-          arr_pic[i].classList.add("active");
-          arr_pointer[i].classList.add("active");
-          i++;
-        }else{
-          i = 1;
-          arr_pic[i-1].classList.add("active");
-          arr_pointer[i-1].classList.add("active");
-        }
-      },2000);
-      
-      arr_pic[0].parentNode.style.height = getComputedStyle(arr_pic[0]).height;
-    }
-    window.addEventListener("resize",function(){
-      var arr_pic = document.getElementsByClassName("carousel-item");
-      arr_pic[0].parentNode.style.height = getComputedStyle(arr_pic[0]).height;
-    });
-  </script>
+  <script src = "js/carousel.js"></script>
 <!-- 出现不可完善的BUG,请直接将该部分注释掉 -->
 
 

@@ -1,6 +1,7 @@
 .carousel-bar{
   position:relative;
   text-align:center;
+  cursor: pointer;
 }
 /*轮播图列表*/
 .carousel{
@@ -38,11 +39,39 @@ li.carousel-item{
   margin-top:1%;
   font-weight:bold;
   color:#ccc;
-  transition:1s;
+  transition:color 1s;
   
 }
 .carousel-link:hover,.carousel-link.active{
   margin-top:-1px;
   border-top:1px solid #000;
   color: #000000;
+}
+
+/* 轮播图切换按钮 */
+.lrBtn > .next-btn,.prev-btn{
+  position:absolute;
+  width:3.5%;height:25%;
+  min-width:30px;min-height:60px;
+  top:35%;
+  background:rgba(0,0,0,0.6);
+  box-sizing: border-box;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+/* 前后箭头 */
+.lrBtn span.icon{
+  background:url(../image/commons/homeslide_arrow.png) no-repeat;
+  width:21px;height: 40px;
+  display:inline-block;
+}
+.lrBtn>.prev-btn{
+  left:0;
+}
+.lrBtn>.prev-btn>span.icon{
+  background-position:0 -45px;
+}
+.lrBtn>.next-btn{
+  right:0;
 }
