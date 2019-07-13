@@ -77,10 +77,10 @@
             <dl class="sign_on_left">
               <dd><p class="font-sm">手机号码 <span style="color:#f00;">*</span></p>
                 <input type="text" class="form_input" placeholder="176xxx4441">
-                <p class="msg">请输入手机号码!</p>
+                <p class="msg">请输入正确的手机号码!</p>
               </dd>
               <dd><p class="font-sm">输入密码 <span style="color:#f00;">*</span></p>
-                <input type="text" class="form_input" placeholder="密码至少为6位字符">
+                <input type="password" class="form_input" placeholder="密码至少为6位字符">
                 <p class="msg">请输入密码</p>
               </dd>
               <dd><button class="form_input form_auth">点击按钮进行验证</button></dd>
@@ -88,10 +88,10 @@
             <dl class="sign_on_center">
                 <dd><p class="font-sm">邮箱 <span style="color:#f00;">*</span></p>
                   <input type="text" class="form_input" placeholder="example@converse.com">
-                  <p class="msg">请输入电子邮箱地址!</p>
+                  <p class="msg">请输入正确的电子邮箱地址!</p>
                 </dd>
                 <dd><p class="font-sm">确认密码 <span style="color:#f00;">*</span></p>
-                  <input type="text" class="form_input" placeholder="密码至少为6位字符">
+                  <input type="password" class="form_input" placeholder="密码至少为6位字符">
                   <p class="msg">请再次输入密码</p>
                 </dd>
                 <dd><p class="font-sm">短信验证码 <span style="color:#f00;">*</span></p>
@@ -113,6 +113,57 @@
                 </dd>
                 <dd class="btn">注册账户</dd>
             </dl>
+            <script>
+              (function(){
+                // 注册部分正则验证
+                var signRst = [];
+                var $signOnTop = document.getElementsByClassName("sign_on_top")[0];
+                var inputs = $signOnTop.getElementsByClassName("form_input");
+                // 正则验证函数用 call
+                var reCheck = function(re,val){
+                  if(re.test(val)){
+                    return true;
+                  }else{
+                    return false;
+                  }
+                }
+                // 根据正则显示msg函数
+                var onMsg = function(re) {
+                  var result = reCheck(re, this.value);
+                  if (!result || this.value=="") {
+                    this.nextElementSibling.style.visibility = "visible";
+                  } else {
+                    this.nextElementSibling.style.visibility = "hidden";
+                    signRst[this.previousElementSibling.textContent]=true;
+                  }
+                  console.log(signRst);
+                }
+                // 用户名验证
+                inputs[0].onblur=onMsg.bind(inputs[0], /^1((3[\d])|(4[5,6,9])|(5[0-3,5-9])|(6[5-7])|(7[0-8])|(8[1-3,5-8])|(9[1,8,9]))\d{8}$/);
+                // 邮箱验证
+                inputs[3].onblur = onMsg.bind(inputs[3], /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/);
+                // 密码验证
+                inputs[1].onblur = onMsg.bind(inputs[1], /^\w{6,20}$/);
+                inputs[4].onblur = function(){
+                  if (inputs[1].value == "") {
+                    this.nextElementSibling.style.visibility = "hidden";
+                    inputs[1].nextElementSibling.style.visibility="visible";
+                    this.value="";
+                  }else if (this.value == "") {
+                    inputs[1].nextElementSibling.style.visibility = "hidden";
+                    this.nextElementSibling.style.visibility = "visible";
+                    this.nextElementSibling.innerHTML = "请再次输入密码"
+                  }else if (this.value != inputs[1].value) {
+                    this.nextElementSibling.style.visibility = "visible";
+                    this.nextElementSibling.innerHTML = "输入的密码不一致"
+                  }else{
+                    this.nextElementSibling.style.visibility = "hidden";
+                    signRst[this.previousElementSibling.textContent] = true;
+                  }
+                };
+                console.log(signRst);
+              })()
+            </script>
         </div>
       </div>
     </div>
@@ -236,14 +287,12 @@
               $sign_on_top[0].classList.remove("active");
               shrink_dropdown();
           }
-          var signOnDrop = function (){
+          $sign_on.onclick = $sign_on_btn.onclick = function (){
             r_expand[0].classList.add("active");
             t_li_login[0].classList.add("active");
             $sign_in_top[0].classList.remove("active");
             $sign_on_top[0].classList.add("active");
           }
-          $sign_on.onclick = signOnDrop;
-          $sign_on_btn.onclick = signOnDrop;
       })();
       //搜索栏展开
       (function(){
@@ -283,7 +332,7 @@
         // $top_nav_bar.style.lineHeight="50px";
       }
     };
-    //导航栏下展开控制器
+    //导航栏向下展开  控制器
     var $link_drop = document.getElementsByClassName("link_drop");
     var $dropdown_item = document.getElementsByClassName("dropdown-item");
     var r_expand = document.getElementsByClassName("expand_box");

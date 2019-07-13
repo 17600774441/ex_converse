@@ -1,4 +1,5 @@
 {
   "python.autoComplete.showAdvancedMembers": false,
-  "emmet.triggerExpansionOnTab": true
+  "emmet.triggerExpansionOnTab": true,
+  "liveServer.settings.port": 5501
 }

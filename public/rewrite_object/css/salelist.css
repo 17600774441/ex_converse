@@ -40,6 +40,7 @@
   height:50px;
   overflow:hidden;
   transition:1s;
+  min-width:110px;
 }
 .one_fold dt{
   font-size:18px;
@@ -75,9 +76,6 @@
   border:3px solid #000;
 }
 
-
-
-
 /* 写入active则展开 */
 .one_fold.active{
   height:100%;
@@ -85,6 +83,12 @@
 .one_fold.active dt{
   background:url(../image/pc/minus.png) no-repeat right center;
 }
+@media (max-width:768px){
+  #size.active{
+    height:600px;
+  }
+}
+
 
 /*最顶部一排排序方法按钮*/
 #sort_list>button{
@@ -117,7 +121,7 @@
   width:33.33%;
 }
 /* 最小屏幕时 不显示筛选栏 */
-@media (max-width:568px){
+@media (max-width:576px){
   #filter{
     display:none;
   }

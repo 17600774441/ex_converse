@@ -327,6 +327,7 @@ header{
   margin-top:-20px;
   margin-bottom:10px;
   color:#f00;
+  visibility: hidden;
 }
 /* 注册栏中间部分样式 */
 .sign_on_center{
