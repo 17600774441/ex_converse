@@ -1,0 +1,50 @@
+//自封装的AJAX
+function ajax({
+	url,//要请求的服务端接口地址
+	type,//请求的类型
+	data,//携带的请求参数
+	dataType//服务端返回结果的类型,如果写json,则可以自动将服务端返回的json字符串,转为js对象,不需要自己再调用JSON.parse
+}){
+  return new Promise(function(resolve,reject){
+		//1. 创建xhr对象
+		var xhr=new XMLHttpRequest();
+		//2.绑定监听事件
+		xhr.onreadystatechange=function(){
+			if(xhr.readyState==4&&xhr.status==200){
+				if(dataType!==undefined
+					&&dataType.toLowerCase()==="json")
+					var res=JSON.parse(xhr.responseText)
+				else
+					var res=xhr.responseText
+				resolve(res);
+			}
+		}
+		if(type.toLowerCase()=="get"&&data!=undefined){
+			url+="?"+data;
+		}
+		//3.打开连接
+		xhr.open(type,url,true);
+		if(type.toLowerCase()==="post")
+			//增加：设置请求消息头
+			xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+		//4.发送请求
+		if(type.toLowerCase()=="post"&&data!==undefined)
+			xhr.send(data);
+		else
+			xhr.send(null);
+  })
+}
+/*
+(async function(){
+	//ES7
+	var res=await ajax({
+		url:"http://localhost:3000/index/",
+		type:"get",
+		dataType:"json"
+	})
+	//ES6
+	.then(res=>{
+		... ...
+	})
+})();
+*/

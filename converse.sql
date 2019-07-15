@@ -123,11 +123,10 @@ CREATE TABLE cv_index_carousel(
 	title VARCHAR(64),#图片描述
 	href VARCHAR(128)#图片链接
 );
-INSERT INTO cv_index_carousel VALUES(null,'image/pc/aspbb_kv_pc_pre_20190530.jpg','Pro BB','');
-INSERT INTO cv_index_carousel VALUES(null,'image/pc/star_series_kv_pc_190528.jpg','STAR SERIES','');
-INSERT INTO cv_index_carousel VALUES(null,'image/pc/os_dimension_kv_pc_190426.jpg','真的有故事','');
+INSERT INTO cv_index_carousel VALUES(null,'image/pc/archive_print_july_kv_pc_190715.jpg','ARCHIVE PRINTS','');
+INSERT INTO cv_index_carousel VALUES(null,'image/pc/erx_su19_kv_pc_190606.jpg','PRIDE','');
+INSERT INTO cv_index_carousel VALUES(null,'image/pc/pride_kv_pc_20190605.jpg','ERX','');
 INSERT INTO cv_index_carousel VALUES(null,'image/pc/jp_gold_kv_pc_190426.jpg','JP GOLD','');
-INSERT INTO cv_index_carousel VALUES(null,'image/pc/lbhd_kv_pc_190401.jpg','LABELHOOD','');
 
 
 #---------------------------首页商品栏目录

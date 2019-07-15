@@ -568,3 +568,12 @@ header{
   opacity:0.4;
   height: 1200px;
 }
+html{
+  height: 2000px;
+}
+.getChat{
+  position:absolute;
+  top:230px;
+  right:0;
+  transition:all 1s ease;
+}

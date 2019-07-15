@@ -1,3 +1,42 @@
+//动态获取轮播图
+(function () {
+  ajax({
+    url: "/index/carousel",
+    type: "get",
+    dataType: "json"
+  }).then((result) => {
+    // 首页动态获取轮播图
+    if(!result.code){
+      var carouselPic = document.getElementsByClassName("carousel")[0];
+      var carouselPointer = document.getElementsByClassName("carousel-pointer")[0];
+      carouselPic.innerHTML="";
+      carouselPointer.innerHTML="";
+      console.log(result);
+      for (var pic of result) {
+        var { cid, img, title, href } = pic;
+        var li = document.createElement("li");
+        var li2 = document.createElement("li");
+        if (cid == 1) {
+          li.className = "carousel-item active";
+          li2.className = "carousel-link active";
+        } else {
+          li.className = "carousel-item";
+          li2.className = "carousel-link";
+        }
+        li2.dataset.target = cid - 1;
+        li2.innerHTML = title;
+        var imgtag = new Image();
+        imgtag.src = img;
+        li.appendChild(imgtag);
+        carouselPic.appendChild(li);
+        carouselPointer.appendChild(li2);
+      }
+    }
+  });
+})();
+
+
+
 //轮播图手写尝试
 window.onload = function () {
   var carousel = document.getElementsByClassName("carousel-bar")[0];
@@ -63,9 +102,9 @@ window.onload = function () {
   prev_btn.addEventListener("click", setPrev);
   //移动端滑动事件
 
-  // 导航被点击后跳转到目标图片
+  // 导航被hover后跳转到目标图片
   for (var ele of arr_pointer) {
-    ele.onclick = function () {
+    ele.onmouseover = function () {
       var target = this.dataset.target;
       for (var i = 0; i < arr_pic.length; i++) {
         arr_pic[i].classList.remove("active");
@@ -76,11 +115,11 @@ window.onload = function () {
       count = target;
     }
   }
-  arr_pic[0].parentNode.style.height = getComputedStyle(arr_pic[0]).height;
+  arr_pic[0].parentElement.style.height = getComputedStyle(arr_pic[0]).height;
   // 窗口大小调整,自动调整轮播图大小
   window.addEventListener("resize", function () {
     var arr_pic = document.getElementsByClassName("carousel-item");
-    arr_pic[0].parentNode.style.height = getComputedStyle(arr_pic[0]).height;
+    arr_pic[0].parentElement.style.height = getComputedStyle(arr_pic[0]).height;
   });
 }
 /*//案例:

@@ -333,12 +333,14 @@
       })();
     </script>
 </header>
+<div class="getChat"><img src="./image/commons/livechat.png" alt=""></div>
   <script>
     window.onscroll=function(){
-      var scroll_t = document.getElementsByTagName("html")[0].scrollTop;
+      var scroll_t = document.documentElement.scrollTop;
       var $header = document.getElementsByTagName("header")[0];
       var $top_func_bar = document.getElementsByClassName("top_func_bar")[0];
       var $top_nav_bar = document.getElementsByClassName("top_nav_bar")[0];
+      var $getChat = document.getElementsByClassName("getChat")[0];
       if(scroll_t>=130){
         $top_func_bar.style.height="50px";
         $top_func_bar.style.lineHeight = "50px";
@@ -350,6 +352,8 @@
         // $top_nav_bar.style.height="50px";
         // $top_nav_bar.style.lineHeight="50px";
       }
+      // 聊聊吧悬浮框的飘动样式
+      $getChat.style.top= scroll_t + 230 + "px";
     };
     (function(){//导航栏向下展开  控制器
       var $link_drop = document.getElementsByClassName("link_drop");
