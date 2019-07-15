@@ -344,13 +344,11 @@
       if(scroll_t>=130){
         $top_func_bar.style.height="50px";
         $top_func_bar.style.lineHeight = "50px";
-        // $top_nav_bar.style.height="30px";
-        // $top_nav_bar.style.lineHeight="30px";
+        $top_nav_bar.classList.add("is_scroll");
       }else{
         $top_func_bar.style.height="80px";
         $top_func_bar.style.lineHeight = "80px";
-        // $top_nav_bar.style.height="50px";
-        // $top_nav_bar.style.lineHeight="50px";
+        $top_nav_bar.classList.remove("is_scroll");
       }
       // 聊聊吧悬浮框的飘动样式
       $getChat.style.top= scroll_t + 230 + "px";

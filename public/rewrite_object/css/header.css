@@ -472,9 +472,21 @@ header{
   margin:5px auto 0;
   border:6px solid transparent;
   border-top-color: #fff;
-
 }
-
+/* 网页下滚动后,导航栏样式 */
+.top_nav_bar.is_scroll{
+  height:30px;
+}
+.top_nav_bar.is_scroll>.top_nav{
+  font-size:14px;
+  margin-top:-3px;
+  margin-bottom:8px;
+}
+.top_nav_bar.is_scroll>.top_nav .top_nav_link:after{
+  display:inline-block;
+  position:relative;
+  top:5px;right:-5px;
+}
 /*导航栏的下展开栏*/
 .nav_dropdown{
   margin-top:4px;
@@ -552,6 +564,7 @@ header{
 .dropdown-item.active .drop_table{
   display:initial;
 }
+
 
 /* 遮盖 */
 .dark{
