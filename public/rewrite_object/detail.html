@@ -40,14 +40,17 @@
               var small_img = $biglass_img.getElementsByTagName("img")[0];
               var big_img = $biglass.getElementsByTagName("img")[0];
               // 遮挡层和放大镜大图 的显示隐藏
-              $biglass_img.onmouseover = function(){
-                $imgDark.style.display = "block";
-                $biglass.style.display = "block"
-              }
-              $biglass_img.onmouseout = function () {
-                $imgDark.style.display = "none";
-                $biglass.style.display = "none"
-              }
+              
+                $biglass_img.onmouseover = function(){
+                  if (window.innerWidth > 997) {
+                    $imgDark.style.display = "block";
+                    $biglass.style.display = "block";
+                  }
+                }
+                $biglass_img.onmouseout = function () {
+                  $imgDark.style.display = "none";
+                  $biglass.style.display = "none";
+                }
               console.log(big_img)
               // 遮罩层跟随鼠标移动:
               $biglass_img.addEventListener("mousemove",function(m){
