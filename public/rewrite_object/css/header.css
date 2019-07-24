@@ -581,11 +581,11 @@ header{
   height: 0;
   top:0;
   z-index:9;
-  transition:opacity 500ms;
+  transition:all 200ms;
 }
 .dark.active{
-  opacity:0.3;
-  height: 1200px;
+  opacity:0.5;
+  height: 100%;
 }
 html{
   height: 2000px;
@@ -595,4 +595,5 @@ html{
   top:230px;
   right:0;
   transition:all 1s ease;
+  z-index:98;
 }

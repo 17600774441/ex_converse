@@ -45,6 +45,7 @@ window.onload = function () {
   var next_btn = document.getElementsByClassName("next-btn")[0];
   var prev_btn = document.getElementsByClassName("prev-btn")[0];
   var box_width = carousel.offsetWidth;
+  arr_pic[0].parentElement.style.height = getComputedStyle(arr_pic[0]).height;
   // 下一张图
   var setNext = function () {
     count++;
@@ -115,7 +116,7 @@ window.onload = function () {
       count = target;
     }
   }
-  arr_pic[0].parentElement.style.height = getComputedStyle(arr_pic[0]).height;
+  
   // 窗口大小调整,自动调整轮播图大小
   window.addEventListener("resize", function () {
     var arr_pic = document.getElementsByClassName("carousel-item");

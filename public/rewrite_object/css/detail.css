@@ -11,6 +11,7 @@
 }
 .top_left{
   flex-basis:25%;
+  position:relative;
 }
 .top_center{
   flex-basis:50%;
@@ -79,7 +80,6 @@
   width: 204px;
   position:absolute;
   top:0;
-  margin-top:50px;
   overflow:hidden;
   border:1px solid #b7b7b7;
   box-sizing:border-box;
