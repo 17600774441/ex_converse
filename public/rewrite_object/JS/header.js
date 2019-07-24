@@ -4,7 +4,11 @@ document.addEventListener("DOMContentLoaded",function () {
     type: "get"
   }).then((result) => {
     document.body.innerHTML = result + document.body.innerHTML;
-    document.head.innerHTML = document.head.innerHTML + `  <link rel="stylesheet" href="css/header.css">`
+    document.head.innerHTML = document.head.innerHTML + `  <link rel="stylesheet" href="css/header.css">`;
+  });
+});
+window.addEventListener("load",function(){
+  (function () {
     // 注册部分正则验证
     var signRst = [];
     var $signOnTop = document.getElementsByClassName("sign_on_top")[0];
@@ -106,10 +110,10 @@ document.addEventListener("DOMContentLoaded",function () {
         t_li_login[0].onclick = function () {
           sign_li();
           shrink_dropdown();
-          if(this.classList.contains("active")){
+          if (this.classList.contains("active")) {
             dark.style.height = document.body.clientHeight + "px";
-            dark.style.opacity= "0.5";
-          }else{
+            dark.style.opacity = "0.5";
+          } else {
             dark.style.height = "0px";
             dark.style.opacity = "0";
           }
@@ -132,26 +136,26 @@ document.addEventListener("DOMContentLoaded",function () {
           $sign_on_top[0].classList.add("active");
         }
         //搜索栏
-        var $go_close = document.getElementsByClassName("go_close")[0];
         $top_search.onclick = function () {
           $top_search.classList.toggle("active");
           shrink_dropdown();
           r_expand[0].classList.remove("active");
           t_li_login[0].classList.remove("active");
           $search_bar.classList.toggle("active");
-          if(this.classList.contains("active")){
+          if (this.classList.contains("active")) {
             dark.style.height = document.body.clientHeight + "px";
-            dark.style.opacity= "0.5";
-          }else{
+            dark.style.opacity = "0.5";
+          } else {
             dark.style.height = "0px";
             dark.style.opacity = "0";
           }
         }
+        var $go_close = document.getElementsByClassName("go_close")[0];
         $go_close.onclick = function () {
+          dark.style.height = "0px";
+          dark.style.opacity = "0";
           $top_search.classList.toggle("active");
           $search_bar.classList.toggle("active");
-          dark.style.height = document.body.clientHeight + "px";
-          dark.style.opacity = "0.5";
         }
       })();
       window.addEventListener("scroll", function () {
@@ -214,5 +218,5 @@ document.addEventListener("DOMContentLoaded",function () {
         }
       })();
     }
-  });
-});
+  })()
+})
