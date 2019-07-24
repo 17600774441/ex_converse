@@ -55,6 +55,7 @@ window.addEventListener("load",function(){
           signRst[this.previousElementSibling.textContent] = true;
         }
       };
+    }
       //登录展开栏
       (function () {
         //登陆注册的按钮(有active时出现下三角箭头)
@@ -217,6 +218,5 @@ window.addEventListener("load",function(){
           };
         }
       })();
-    }
   })()
 })

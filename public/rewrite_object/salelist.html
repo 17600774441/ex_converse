@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="css/comm.css">
   <link rel="stylesheet" href="css/salelist.css">
   <script src="JS/ajax.js"></script>
+
   <script src="JS/header.js"></script>
 </head>
 <body>
@@ -167,6 +168,25 @@
       </dl>
     </div>
   </div>
-  
+    <script>
+      // 手写手风琴
+      window.addEventListener("load",function () {
+        var $one_fold = document.getElementsByClassName("one_fold");
+        for (var i = 0; i < $one_fold.length; i++) {
+          $one_fold[i].firstElementChild.onclick = opened.bind($one_fold[i]);
+          function opened() {
+            if (this.classList.contains("active")) {
+              this.classList.remove("active");
+            } else if (!this.classList.contains("active")) {
+              for (var i = 0; i < $one_fold.length; i++) {
+                $one_fold[i].classList.remove("active");
+              }
+              this.classList.add("active");
+            }
+          }
+        }
+      });
+
+    </script>
 </body>
 </html>
